@@ -1,0 +1,67 @@
+.insights{
+    @include mq(md){
+        padding: rem(103px) 0 rem(96px) 0;
+    }
+
+    padding: rem(75px) 0;
+
+    &__presentation{
+        @include mq(md){
+            max-width: rem(367px);
+            margin-inline-end: auto;
+        }
+    }
+
+    &__title{
+        @include title;
+    }
+
+    &__overview{
+        @include overview;
+    }
+
+    &__table{
+        @include mq(xl){
+            gap: rem(100px);
+        }
+
+        @include mq(md){
+            flex-direction: row;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: rem(50px);
+        margin-top: rem(31px);
+
+        &__left{
+            @include mq(xl){
+                width: calc(50% - 100px);
+            }
+
+            @include mq(md){
+                width: calc(50% - 50px);
+                height: auto;
+            }
+
+            @include justifyCenterCol;
+            height: rem(300px);
+            background-color: setColor(gray, light);
+            border-radius: rem(32px);
+        }
+
+        &__right{
+            @include mq(md){
+                width: 50%;
+            }
+        }
+    }
+
+    &__table__right__point{
+        margin-bottom: rem(25px);
+
+        &__title span{
+            font-size: rem(24px);
+        }
+    }
+}

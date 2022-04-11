@@ -1,0 +1,29 @@
+{% load static %}
+
+<div class="email">
+    <div class="email__left-box">
+        <div class="email__left-box__title">
+            <h2>Reach out for more?</h2>
+        </div> 
+        <div class="email__left-box__overview">
+            <p>{% lorem 30 w%}</p>
+        </div>  
+
+        <form method="POST" enctype="text/plain" action="">
+            <input type="text" id="email" placeholder="Enter you email adress...">
+            <input type="submit" value="See you soon!">
+        </form>
+
+    </div>
+
+    <div class="greeting__box-right">
+
+        <div class="greeting__box-right-circle">
+            <div class="create">
+                <img  
+                src="{%static 'images/emojis/emoji_dropbox.png'%}" 
+                alt="An emoji of a painting palette">
+            </div>
+        </div>
+    </div>
+</div>

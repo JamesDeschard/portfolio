@@ -1,0 +1,51 @@
+.framing {
+    @include justifyCenterCol;
+
+    &__title {
+        @include title;
+    }
+
+    &__overview{
+        @include overview;
+        max-width: rem(654px);
+        margin: auto;
+        text-align: center;
+        margin-bottom: rem(40px);
+    }
+
+    &__cards{
+        @include mq(lg){
+            margin-right: rem(-$base-font-size);
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rem(138px);
+        gap: rem($base-font-size);
+
+        &__card{
+            @include mq(lg){
+                width: calc(50% - $base-font-size);
+                padding: rem(40px) rem(32px); 
+            }
+
+            border-radius: rem(32px);
+            background-color: setColor(gray, light);
+            padding: rem(40px) rem(32px);  
+            
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: setColor(gray, dark);
+            }
+
+            &__text{
+                @include fluid-type(28, 21, 1500, 0);
+                margin-top: rem(32px);
+                color: setColor(black);
+                font-size: rem(28px);
+            }
+        }
+    }
+}

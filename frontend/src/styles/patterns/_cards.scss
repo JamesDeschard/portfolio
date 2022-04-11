@@ -1,0 +1,189 @@
+.cards-intro{
+    @include justifyCenterCol;
+    padding-top: rem(75px);
+
+    &__title{
+        @include title;
+    }
+
+    &__overview{
+        @include overview;
+        margin-bottom: rem(75px);
+        font-size: rem(34px);
+        font-weight: 600;
+    }
+}
+
+.cards-outro{
+    @include justifyCenterCol;
+    padding-bottom: rem(75px);
+
+    &__show-all{
+        @include justifyCenterRow;
+
+        max-width: rem(250px);
+
+        margin-top: rem(35px);
+        margin-inline: auto;
+        padding: rem(13px) rem($base-font-size);
+
+        border-radius: rem(10px);
+
+        color: setColor(white);
+        background-color: setColor(black);
+
+        text-align: center;
+
+        cursor: pointer;
+    }
+}
+
+.cards{
+    @include justifyCenterCol;
+    height: rem(625px);
+    transition: height 1s ease-in-out;
+
+    &__flipped{
+        display: flex;
+        justify-content: center;
+        gap: rem(50px);
+        flex-wrap: wrap;
+        margin-right: rem(-15px);
+    }
+
+    .cards__container{
+
+        @include mq(lg){
+            flex-direction: row;
+        }
+        
+        @include justifyCenterCol;
+
+        width: 100%;
+
+        &__flipped{
+            display: flex;
+            gap: rem(15px);
+            flex-wrap: wrap;
+            margin-right: rem(-15px);
+        }
+
+        &__left{
+            @include mq(lg){
+                justify-content: flex-end;
+                width: 20%;
+            }
+
+            display: flex;
+            justify-content: center; 
+            
+            &__circle{
+                @include small_circle
+            }
+        }
+
+        &__center{
+            @include justifyCenterRow;
+            width: 60%;
+            height: 100%;
+            position: relative;
+
+            &__card{
+                @include mq(lg){
+                    height: rem(432px);
+                    width: rem(400px);
+                }
+
+                position: absolute;
+
+                height: rem(360px);
+                width: rem(333px);
+
+                transition: all 1s ease;
+            }
+
+            @for $i from 0 through 4 {
+                &__card:nth-of-type(#{$i}){
+                    transform: rotate(calc(#{$i} * -10deg + 10deg));
+                    z-index: -#{$i};
+                }
+            }
+        }
+
+        &__right{
+            @include mq(lg){
+                justify-content: flex-start;
+                width: 20%;
+            }
+
+            display: flex;
+            justify-content: center;
+
+            &__circle{
+                @include small_circle
+            }
+        }
+    }
+}
+
+.cards__container__center__card{
+    display: flex;
+    flex-direction: column;
+    box-sizing:border-box;
+    perspective:600px;
+
+    &__part{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        padding: rem(35px) rem(32px);
+
+        background-color: setColor(white);
+        border-radius: rem(32px);
+        box-shadow: 3px 5px 7px 5px setColor(gray, light);
+        
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+
+        z-index: 1000;
+
+        &__number{
+            display: flex;
+            justify-content: flex-start;
+            height: rem(48px);
+            
+            color: setColor(gray, dark_font);
+            font-size: fluid-type(24, 18, 768, 1500);
+            margin-bottom: rem($base-font-size); 
+        }
+    
+        &__text{
+            @include fluid-type(24, 34, 768, 1500);
+        }
+    }
+
+    &__front{
+        transform: rotateY(0deg);
+    }
+
+    &__back{
+        @include justifyCenterCol;
+        transform: rotateY(-180deg);
+        background-color: setColor(gray, light);
+    }
+
+    
+    &:hover .activate-hover-1{
+        transform: rotateY(180deg);
+    }
+
+    &:hover .activate-hover-2{
+        transform: rotateY(0deg);
+    }
+}
+
+

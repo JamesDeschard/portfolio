@@ -1,0 +1,55 @@
+<div class="overview__title">
+    <h2>Overview</h2>
+</div>
+
+<div class="overview">
+
+    <div class="overview__left">
+          {{current.overview|safe}}
+    </div>
+
+    <div class="overview__right">
+
+        <div class="overview__box">
+
+            <div class="overview__small-title">
+                <h3>Role</h3>
+            </div>
+
+            {% for role in current.role%}
+            {% if role == current.role|last %}
+            <span>{{role}}</span>
+            {%else%}
+            <span>{{role}},</span>
+            {%endif%}
+            {%endfor%}
+
+        </div>
+
+        <div class="overview__box">
+
+            <div class="overview__small-title">
+                <h3>Duration</h3>
+            </div>
+
+            <span>{{current.duration}}</span>
+
+        </div>
+
+        <div class="overview__box">
+
+            <div class="overview__small-title">
+                <h3>Outcomes</h3>
+            </div>
+
+            <div class="overview__outcome__tag-box">
+                {% for outcome in current.outcomes%}
+                <div class="overview__outcome__tag-box__tag">
+                    {{outcome}}
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+    </div>
+</div>

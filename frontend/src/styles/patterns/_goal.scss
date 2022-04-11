@@ -1,0 +1,44 @@
+.goal{
+    @include mq(lg) {
+        flex-direction: row;
+    }
+
+    @include mq(lg){
+        margin: rem(128px) 0;
+    }
+
+    margin-top: 0;
+    margin-bottom: rem(200px);
+    display: flex;
+    flex-direction: column;
+
+    &__left{
+        @include mq(lg){
+            flex-direction: column;
+            max-width: rem(367px);
+            margin-right: auto;
+            margin-bottom: 0;
+            width: 50%;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: rem(200px);
+
+        &__title{
+            @include title;
+
+        }
+
+        &__overview{
+            @include overview;
+        }
+
+        &__description{
+            color: setColor(gray, slight_dark);
+            margin-top: rem($base-font-size);
+        }
+    }   
+}

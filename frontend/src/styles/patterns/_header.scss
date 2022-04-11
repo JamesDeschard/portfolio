@@ -1,0 +1,100 @@
+.navigation {
+    @include mq(md){
+        padding-top: rem(56px);
+        justify-content: flex-start;
+    }
+
+    display: flex;
+    margin: auto;
+    padding-top: rem(25px);
+
+    width: rem(1136px);
+    max-width: calc(100% - 40px);
+
+    &__avatar {
+        @include mq(md){
+            justify-content: flex-start;
+            width: 25%; 
+        }
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            border-radius: 50%;
+            transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+            &:hover{
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    &__hamburger{
+        @include mq(md){
+            display: none;
+        }   
+
+        display: flex;
+        margin-left: auto;
+        align-items: flex-start;
+        padding-top: rem(-16px);
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    &__links {
+        @include mq(md){
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+        }
+
+        display: none;
+
+
+        li {
+            @include justifyCenterCol;
+            margin-inline: rem($base-font-size);
+
+            a {
+                color: setColor(gray, dark_font);
+                position: relative;
+
+                &::after{
+                    content:'\25CF';
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    top: rem(25px);
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    &__social-media{
+
+        @include mq(md){
+            display: flex;
+            justify-content: flex-end;
+            margin: auto 0;
+            width: 25%;
+        }
+
+        display: none;
+        
+        a {
+            color: setColor(black);
+        }
+    }
+}
+
+#changeColor {
+    position: absolute;
+    top: 200px;
+    right: 200px;
+}
+

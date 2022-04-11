@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="ipad" data-module="ScrollAnimation">
+    <div class="ipad__text-container">
+        <div class="ipad__tags-container">
+            <div class="ipad__tags-container-tag">
+                {%lorem 1 w%}
+            </div>
+        </div>
+
+        <div class="ipad__title">
+            <h2>Project Title</h2>
+        </div>
+
+        <div class="ipad__overview">
+            <p>{%lorem 30 w%}</p>
+        </div>
+
+        <div class="ipad__discover">
+            <a href="#">Tell me more</a>
+            <svg class="icon" aria-hidden="true" focusable="false">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
+            </svg>
+        </div>
+    </div>
+
+    <div class="ipad__ipad">
+        <picture class="white">
+            <source media="(max-width: 480px)" srcset="{%static 'images/devices/white/white_iphone.png'%}">
+            <img src="{%static 'images/devices/white/white_ipad.png'%}" alt="An image of an ipad">
+        </picture>
+        <picture class="black">
+            <source media="(max-width: 480px)" srcset="{%static 'images/devices/black/black_iphone.png'%}">
+            <img src="{%static 'images/devices/black/black_ipad.png'%}" alt="An image of an ipad">
+        </picture>
+    </div>
+
+</div>

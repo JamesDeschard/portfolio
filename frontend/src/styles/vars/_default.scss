@@ -1,0 +1,72 @@
+@use "sass:map";
+
+/**
+ * Variables
+*/
+
+/* Typography */
+$primary-font-family: roboto, sans-serif;
+$secondary-font-family: roboto, sans-serif;
+
+$base-font-size: 16px;
+
+$base-line-height: 1.4;
+$heading-line-height: 1.2;
+
+/* Circle */
+
+$circle-circumference-large: 464px;
+$circle-circumference-medium: 400px;
+$circle-circumference-small: 300px;
+
+$circle-inside-emoji-dimension: 88px;
+
+// Replace font-styles with fluid mixin
+
+// $font-styles: (
+//   title: (
+//     size: 32px,
+//     lh: $heading-line-height,
+//     weight: 600,
+//     ratio: 2,
+//     bp: xl
+//   ),
+// );
+
+/* Breakpoints */
+$breakpoints: (
+  sm : 480px,
+  md : 768px,
+  lg : 1024px,
+  xl : 1280px,
+);
+
+/* Paths */
+
+/* Grid setup */
+$container-width: calc(1440px - (152px * 2));
+$mobile-external-gutter: 20px;
+
+/* Colour palette */
+
+/* Use setColor function */
+$colors: (
+  black: (
+    base: var(--main-font),
+  ),
+  white: (
+    base: var(--main-bg),
+  ),
+  gray: (
+    dark: var(--sub-color-dark),
+
+    dark_font: var(--dark-font),
+    project-bg: var(--project-bg),
+
+    small_font: var(--small-font),
+    light: var(--sub-color-light),
+  ),
+);
+
+/* Components */
+$loading-dimensions: 50px;

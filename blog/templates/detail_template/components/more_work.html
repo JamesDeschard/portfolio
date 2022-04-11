@@ -1,0 +1,66 @@
+{% load static %}
+{% load main_tags%}
+
+{% with marker="0"%}
+{% with project='/projects/' %}
+{% with path=request.path %}
+
+<div class="more-lectures">
+    <div class="more__title">
+        {% if project in path%}
+        <h2>More Projects.</h2>
+        {%else%}
+        <h2>More Lectures.</h2>
+        {%endif%}
+    </div>
+    {% if project in path%}
+    {% if marker|update_variable == "1" %}
+    <div class="glide" data-module="Carousel">
+    {%else%}
+    <div class="glide" data-carousel="Carousel_bis">
+    {%endif%}
+    {%else%}
+    <div class="glide" data-module="Carousel">
+    {%endif%}
+
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                {% for i in "123"|make_list%}
+                <li class="glide__slide"> 
+
+                    <div class="more__container-box">
+                        <div class="more__container-box__image-box">
+                            {% if project in path%}
+                            <img src="{%static 'images/emojis/emoji_tent.png'%}" alt="An emoji representing a tent">
+                            {% else %}
+                            <img src="{%static 'images/emojis/emoji_pen.png'%}" alt="An emoji representing a pen"> 
+                            {% endif %}
+                        </div>
+                
+                        <div class="more__container-box__title">
+                            <h3>{%lorem 4 w%}</h3>
+                        </div>
+                
+                        <div class="more__container-box__overview">
+                            <h3>{%lorem 20 w%}</h3>
+                        </div>
+                
+                        <div class="more__container-box__tag-box">
+                            {%for i in "123"|make_list%}
+                            <div class="more__container-box__tag-box__tag">
+                                <p>lorem</p>
+                            </div>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div> 
+</div>
+
+{% endwith %}
+{% endwith %}
+{% endwith %}
+

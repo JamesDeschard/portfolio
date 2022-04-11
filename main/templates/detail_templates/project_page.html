@@ -1,0 +1,21 @@
+{% extends 'base_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{%block project%}{%include 'detail_templates/components/project.html'%}{%endblock project%}
+
+<div class="container">
+
+    <div class="extra-container">
+        {%block overview%}{%include 'detail_templates/components/overview.html'%}{%endblock overview%}
+        {%block framing%}{%include 'detail_templates/components/framing.html'%}{%endblock framing%}
+        {%block goal%}{%include 'detail_templates/components/goal.html'%}{%endblock goal%}
+        {%block insights%}{%include 'detail_templates/components/insights.html'%}{%endblock insights%}
+        {%block ideation%}{%include 'detail_templates/components/ideation.html'%}{%endblock ideation%}
+    </div>
+    
+    {%block more_work%}{%include 'detail_template/components/more_work.html'%}{%endblock more_work%}
+</div>
+
+{% endblock %}

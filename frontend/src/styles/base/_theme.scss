@@ -1,0 +1,29 @@
+:root{
+    --theme_white: inline;
+    --theme_black: none;
+
+    --main-font: rgb(33, 33, 33);
+    --main-bg: #fff;
+
+    --project-bg: "#F2F2F2";
+
+    --dark-font: #666666;
+    --small-font: #666666;
+
+    --sub-color-dark: rgba(0, 0, 0, 0.7);
+    --sub-color-light: #F2F2F2;
+
+  }
+
+  body{
+      background-color: setColor(white);
+  }
+
+
+  .black{
+      display: var(--theme_black);
+  }
+
+  .white{
+      display: var(--theme_white);
+  }

@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="framing">
+
+    <div class="framing__title">
+        <h2>Problem Framing</h2>
+    </div>
+
+    <div class="framing__overview">
+        <p>{% lorem 20 w%}</p>
+    </div>
+
+    <div class="framing__cards">
+        <div class="framing__cards__card">
+            <div class="framing__cards__card__top">
+                <span>Who</span>
+                <img src="{%static 'images/emojis/emoji_face.png'%}" alt="An emoji of a serious face">
+            </div>
+            <div class="framing__cards__card__text">
+                {{current.who|safe}}
+            </div>
+        </div>
+        <div class="framing__cards__card">
+            <div class="framing__cards__card__top">
+                <span>When</span>
+                <img src="{%static 'images/emojis/emoji_clock.png'%}" alt="An emoji of a clock">
+            </div>
+            <div class="framing__cards__card__text">
+                {{current.when|safe}}
+            </div>
+        </div>
+        <div class="framing__cards__card">
+            <div class="framing__cards__card__top">
+                <span>Where</span>
+                <img src="{%static 'images/emojis/emoji_location.png'%}" alt="An emoji of a location pin">
+            </div>
+            <div class="framing__cards__card__text">
+                {{current.where|safe}}
+            </div>
+        </div>
+        <div class="framing__cards__card">
+            <div class="framing__cards__card__top">
+                <span>Why</span>
+                <img src="{%static 'images/emojis/emoji_heart.png'%}" alt="An emoji of a heart">
+            </div>
+            <div class="framing__cards__card__text">
+                {{current.why|safe}}
+            </div>
+        </div>
+    </div>
+</div>

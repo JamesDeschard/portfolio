@@ -1,0 +1,17 @@
+{%load static%}
+<div class="footer" data-module="ScrollUp">
+    <div class="navigation__copyright">
+        © James Deschard
+    </div>
+
+    {%block navlinks%}{%include 'base_templates/components/navigation_links.html'%}{%endblock%}
+
+    <div class="navigation__back-up">
+        <div class="elevator-button">
+            Back up
+            <svg class="icon" aria-hidden="true" focusable="false">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
+            </svg>
+        </div>
+    </div>
+</div>

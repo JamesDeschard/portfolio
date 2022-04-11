@@ -1,0 +1,60 @@
+.animate{
+    animation: 5s rotation ease;
+    animation-fill-mode: forwards; 
+}
+
+.move-out-right{
+    animation: 0.5s move-out-right ease-out;
+    animation-fill-mode: forwards; 
+}
+
+.move-out-left{
+    animation: 0.5s move-out-left ease-out;
+    animation-fill-mode: forwards; 
+}
+
+.move-in-right{
+    animation: 0.5s move-in-right ease-in;
+    animation-fill-mode: forwards; 
+}
+
+.move-in-left{
+    animation: 0.5s move-in-left ease-in;
+    animation-fill-mode: forwards; 
+}
+
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.adjust-height{
+    margin-top: rem(50px);
+    height: rem(950px) !important;
+}   
+
+.prepare-card{
+    position: static !important;
+}
+
+
+.reset-rotation{
+    transform: rotate(0deg) !important;
+}
+
+.fade-in-last-moment{
+    animation: 2.5s fade-in-last-moment ease-in;
+    animation-fill-mode: forwards; 
+}
+
+.activate-flip-1{
+    transform: rotateY(180deg);
+}
+
+.activate-flip-2{
+    transform: rotateY(0deg);
+}
+
+

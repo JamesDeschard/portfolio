@@ -1,0 +1,55 @@
+{% load static %}
+
+{% for i in "12"|make_list %}
+{%if i == "2"%}
+<div class="iphone reversed">
+{%else%}
+<div class="iphone">
+{%endif%}
+
+{%if i == "2"%}
+    <div class="iphone__image-box first">
+        <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="An image of an iphone">
+        <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="An image of an iphone">
+    </div>
+    {%endif%}
+
+    <div class="iphone__text-container">
+
+
+        <div class="iphone__text-box">
+
+            <div class="iphone__title">
+                <h2>Project Title</h2>
+            </div>
+
+            <div class="iphone__tags-container">
+                <div class="iphone__tags-container-tag">
+                    <span>{%lorem 1 w%}</span>
+                </div>
+            </div>
+
+            <div class="iphone__overview">
+                <p>{%lorem 20 w%}</p>
+            </div>
+
+            <div class="iphone__discover">
+                <a href="#">Tell me more</a>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
+                </svg>
+            </div>
+
+        </div>
+
+    </div>
+
+    {%if i == "1"%}
+        <div class="iphone__image-box second">
+            <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="An image of an iphone">
+            <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="An image of an iphone">
+        </div>
+    {%endif%}
+
+</div>
+{%endfor%}

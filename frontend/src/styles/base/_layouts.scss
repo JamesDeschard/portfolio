@@ -1,0 +1,20 @@
+.container {
+  @include container;
+}
+
+@include mq(md) {
+  .container {
+    padding: 0;
+  }
+}
+
+.extra-container{
+  @include mq(md){
+    margin-inline: rem(96px);
+  }
+  margin-inline: 0;
+}
+
+body {
+  overflow-x: hidden;
+}

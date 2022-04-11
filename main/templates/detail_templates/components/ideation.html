@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="ideation">
+
+    <div class="ideation__title">
+        <h2>More snippets</h2>
+    </div>
+    <div class="ideation__overview">
+        <p>{% lorem 10 w%}</p>
+    </div>
+
+    <div class="ideation__image-container">
+        <div class="glide" data-module="Carousel">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    {% for i in "1234"|make_list%}
+                    <li class="glide__slide"> 
+                        <img class="ideation__image white" src="{% static 'images/devices/white/white_iphone.png'%}" alt="A representation of an iphone">
+                        <img class="ideation__image black" src="{% static 'images/devices/black/black_iphone.png'%}" alt="A representation of an iphone">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div> 
+    </div>
+
+</div>

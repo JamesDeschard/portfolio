@@ -1,0 +1,16 @@
+.ideation{
+    padding: rem(88px) 0;
+
+    &__title{
+        @include title;
+    }
+
+    &__overview{
+        @include overview;
+        margin-bottom: rem(58px);
+    }
+
+    &__image{
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5)); 
+    }
+}

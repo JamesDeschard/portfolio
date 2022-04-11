@@ -1,0 +1,14 @@
+{% extends 'base_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    
+    {%block greeting%}{%include 'main_templates/components/greeting.html'%}{%endblock greeting%}
+    {%block more%}{%include 'main_templates/components/more.html'%}{%endblock more%}
+    {%block email%}{%include 'main_templates/components/email.html'%}{%endblock email%}
+  
+</div>
+
+{% endblock %}

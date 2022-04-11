@@ -1,0 +1,119 @@
+.greeting{
+    @include mq(lg){
+        flex-direction: row;
+        padding: rem(179px) 0 !important;
+    }
+
+    @include mq(md){
+        padding: rem(125px) 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    padding: rem(50px) 0 rem(200px) 0 ;
+
+
+    &__box-left{
+        @include mq(lg){
+            margin-bottom: 0 !important;
+            width: 50%;
+        }
+
+        @include mq(sm){
+            margin-bottom: rem(250px);
+        }
+
+        margin-bottom: rem(175px);
+    }
+
+    &__box-left-title{
+        @include title;
+    }
+
+    &__box-left-overview{
+        @include overview;
+        
+        color: setColor(black );
+
+        font-size: rem(17px);
+
+        margin-bottom: rem(24px);
+    }
+
+    // About page extra paragraphe
+
+    &__box-left-sub-overview{
+        color: setColor(gray, small_font);
+        margin-bottom: rem(24px);
+    }
+
+    &__interactions{
+        display: flex;
+
+        svg {
+            margin-left: rem(5px);
+            transform: rotate(90deg);
+        }
+    }
+
+    &__interaction-left{
+        @include justifyCenterRow;
+
+        min-width: rem(122px);
+        border-radius: rem(10px);
+        background-color: setColor(black);
+
+        a {
+            color: setColor(white); 
+        }
+
+        &:hover img{
+            animation: hello .5s infinite ease-in-out;
+        }
+    }
+
+    &__interaction-right{
+        
+        @include justifyCenterRow;
+        width: rem(206px);
+        margin-right: auto;
+        height: rem(48px);
+        cursor: pointer;
+        
+        a {
+            color: setColor(black);
+        }
+
+        &:hover svg{
+            animation: 1s up-down ease-in-out infinite;
+        }
+    }
+
+    &__box-right {
+        @include mq(lg){
+            width: 50%;  
+            justify-content: flex-end;
+        }
+
+        @include justifyCenterRow;
+        
+        &-circle{
+            position: absolute;
+
+            .create{
+                @include circle;
+                @include justifyCenterCol;
+
+                img{
+                    height: rem($circle-inside-emoji-dimension);
+                    width: rem($circle-inside-emoji-dimension);
+                }
+            }
+        }
+    }
+}
+
+.lighter-font{
+    color: setColor(gray, light) !important;
+}
+

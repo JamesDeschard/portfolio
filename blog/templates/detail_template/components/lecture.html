@@ -1,0 +1,29 @@
+{% load static%}
+
+<div class="lecture">
+    <div class="lecture__tags-box">
+        {% for tag in current.tags%}
+        <div class="lecture__tags-box__tag">
+            <span>{{tag}}</span>
+        </div>
+        {% endfor%}
+    </div>
+
+    <div class="lecture__title">
+        <h1>{{current.title}}</h1>
+    </div>
+
+    <div class="lecture__date">
+        <div>{{current.date|date:"F j Y"}} <span class="lecture__date__dot"></span> {{current.length}} minutes read
+        </div>
+    </div>
+
+    <div class="lecture__illustration">
+        <img src="{%static 'images/emojis/emoji_pen.png'%}" alt="An emoji representing a pen">
+    </div>
+
+    <div class="lecture__text">
+        {{current.text|safe}}
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+{% load static %}
+<div class="insights">
+    <div class="insights__presentation">
+        <div class="insights__title">
+            <h2>Insights</h2>
+        </div>
+        <div class="insights__overview">
+            {% lorem 15 w %}
+        </div>
+    </div>
+
+    <div class="insights__table">
+        <div class="insights__table__left">
+            <img src="{% static 'images/emojis/emoji_face.png' %}" alt="An emoji of a face">
+        </div>
+
+        <div class="insights__table__right">
+            {% for i in "123"|make_list %}
+            <div class="insights__table__right__point">
+                <div class="insights__table__right__point__title">
+                    <span>Point {{i}}</span>
+                    <p>{% lorem 30 w%}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+/**
+ * Dirty hacks, yes internet explorer, we are looking at you
+*/
+
+.navigation__selected {
+    a {
+        color: setColor(black) !important;
+        &::after{
+            visibility: visible !important;
+        }
+    }
+}
+
+.reversed {
+    @include mq(sm){
+        flex-direction: row;
+    }
+
+    flex-direction: column-reverse;
+
+}
+
+.simplify {
+    background-color: setColor(white);
+    color: setColor(black);
+    justify-content: flex-start;
+    margin-left: rem($base-font-size);
+}
+
+
+.navigation_hack{
+    background-color: setColor(gray, project-bg);
+
+    a {
+        display: flex;
+        width: rem(1136px);
+        max-width: calc(100% - 40px);
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: auto;
+        padding-top: rem(56px);
+    }
+}
+
+.rotated{
+    transform: rotate(0deg) !important;
+}
+
+// Lectures and Experiments Overviews
+
+.clearer-font{
+    color: setColor(gray, dark_font) !important;
+}
+
+@media (min-width: 1024px) and (max-width:1280px) {
+    .goal .greeting__box-right-circle::before{
+        width: 400px !important;
+        height: 400px !important;
+    }
+    .goal .greeting__box-right-palette{
+        margin-right: 156px;
+    }
+
+
+}

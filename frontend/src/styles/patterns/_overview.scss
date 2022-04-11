@@ -1,0 +1,57 @@
+.overview__title{
+    @include title;
+    margin: rem(123px) 0 rem(35px) 0;
+}
+
+.overview{
+    @include mq(md){
+        flex-direction: row;
+    }
+
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: rem(154px);
+
+    &__left{
+        @include mq(md){
+            width: 60%;
+        }
+
+        color: setColor(gray, slight_dark);
+
+    }
+
+    &__right{
+        @include mq(md){
+            width: 40%;
+        }
+    }
+
+    &__small-title{
+        font-size: rem($base-font-size);
+        font-weight: 600;
+        margin-bottom: rem($base-font-size);
+
+    }
+
+    &__box{      
+        @include mq(md){
+            margin: 0 auto rem(40px) rem(111px);
+        }
+
+        max-width: rem(272px);
+        margin-bottom: rem(40px);
+    }
+
+    &__outcome__tag-box{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: rem(8px);
+
+        &__tag{
+            @include tag;
+            margin-bottom: rem(10px);
+        }
+    }
+}

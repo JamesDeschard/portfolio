@@ -1,0 +1,101 @@
+{% load static %}
+
+{% with path=request.path %}
+{% with home='/' %}
+{% with about='/about/' %}
+{% with lectures='/lectures/' %}
+{% with experiments='/experiments/' %}
+
+<div class="greeting" data-module="MagneticEffect">
+
+    <div class="greeting__box-left">
+        <div class="greeting__box-left-title">
+            <h1>Lorem Ipsum Dolor</h1>
+        </div>
+        
+        {% if path == home or about in path%}
+        <div class="greeting__box-left-overview">
+        {%else%}
+        <div class="greeting__box-left-overview clearer-font">
+        {%endif%}
+            
+            {%lorem 30 w%}
+
+            {% if path == home%}
+            <img class="icon" src="{%static 'images/emojis/emoji_smile.png'%}" alt="An emoji of a smiley face">
+            {%endif%}
+
+        </div>
+
+        {%if about in path%}
+        <div class="greeting__box-left-sub-overview">
+            {%lorem 1 p%}
+        </div>
+        {%endif%}
+
+        <div class="greeting__interactions" data-module="SmoothScroll">
+            
+            {%if about in path%}
+            <div class="greeting__interaction-left simplify">
+            {%else%}
+            <div class="greeting__interaction-left" data-seo-container>
+            {%endif%}
+            
+                {%if path == home%}
+                <a href="{% url 'aboutpage'%}" data-seo-target>Say Hi</a>
+
+                <img class="icon small_icon" src="{%static 'images/emojis/emoji_hello.png'%}" alt="An emoji of a wave">
+
+                {%else%}
+                <div>
+
+                    <span>Learn more </span>
+
+                    <svg class="icon" aria-hidden="true" focusable="false">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
+                    </svg>
+
+                </div>
+
+                {%endif%}
+            </div>
+
+            {% if path == home%}
+            <div class="greeting__interaction-right">
+                
+                <a href="#ipad">Discover my Work</a>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
+                </svg>
+
+            </div>
+            {%endif%}
+
+        </div>
+    </div>
+
+    <div class="greeting__box-right">
+
+        <div class="greeting__box-right-circle">
+            <div class="create">
+                {%if path == home%}
+                <img src="{%static 'images/emojis/emoji_palette.png'%}" alt="An emoji of a painting palette">
+                {%elif about in path%}
+                <img  src="{%static 'images/emojis/emoji_working.png'%}" alt="An emoji of a painting palette">
+                {%elif lectures in path%}
+                <img  src="{%static 'images/emojis/emoji_bulb.png'%}" alt="An emoji of a painting palette">
+                {%else%}
+                <img src="{%static 'images/emojis/emoji_painter.png'%}" alt="An emoji of a painting palette">
+                {%endif%}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{%endwith%}
+{%endwith%}
+{%endwith%}
+{%endwith%}
+{%endwith%}

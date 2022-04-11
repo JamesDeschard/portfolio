@@ -1,0 +1,33 @@
+
+.email{
+    form {
+        @include mq(sm){
+            flex-direction: row;
+        }
+        display: flex;
+        flex-direction: column;
+        padding-right: rem(49px);
+        gap: rem(15px);
+
+        input[type="text"]{
+            border:none;
+            min-width: rem(200px);
+            padding: rem($base-font-size) rem(13px);
+            border-radius: rem(10px);
+            background-color: setColor(gray, very_light);
+
+            &::placeholder{
+                font-size: rem($base-font-size);
+            }
+        }
+
+        input[type="submit"]{
+            border:none;
+            border-radius: rem(10px);
+            background-color: setColor(black);
+            color: setColor(white);
+            font-size: rem($base-font-size);
+            padding:rem(13px);
+        }
+    }
+}

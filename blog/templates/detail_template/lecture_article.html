@@ -1,0 +1,14 @@
+{% extends 'base_templates/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- model = current -->
+
+<div class="container">
+    
+    {%block lecture%}{%include 'detail_template/components/lecture.html'%}{%endblock lecture%}
+    {%block more_work%}{%include 'detail_template/components/more_work.html'%}{%endblock more_work%}
+  
+</div>
+
+{% endblock %}

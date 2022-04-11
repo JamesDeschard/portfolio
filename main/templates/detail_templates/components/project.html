@@ -1,0 +1,20 @@
+{% load static%}
+
+<div class="project">
+    <div class="project__container">
+        <div class="project__container__left">
+            <div class="project__container__left__title">
+                <h1>{{current.title|safe}}</h1>
+            </div>
+            <div class="project__container__left__sub-title">
+                <h2>{{current.sub_title|safe}}</h2>
+            </div>
+        </div>
+    
+        <div class="project__container__right">
+            <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="An illustration of an iphone">
+            <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="An illustration of an iphone">
+        </div>
+    </div>
+</div>
+
