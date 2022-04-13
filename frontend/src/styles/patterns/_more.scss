@@ -41,9 +41,14 @@
     }
 
     &__title{
+
         font-size: rem(24px);
         font-weight: 600;
         margin-top: rem($base-font-size);
+
+        a{
+            color: setColor(black);
+        }
     }
 
     &__overview{

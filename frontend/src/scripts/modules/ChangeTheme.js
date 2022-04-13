@@ -39,6 +39,7 @@ export default ChangeTheme => {
             this.theme = 'white';
             this.white_theme = 'inline';
             this.black_theme = 'none';
+            this.checkUserTheme();
             this.bindEvent();
             this.adaptTheme();
         }
@@ -52,8 +53,14 @@ export default ChangeTheme => {
 
         }
 
+        checkUserTheme() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                this.makeThemeChanges();
+            }
+        }
+
         bindEvent() {
-            if (! this.changeButton.classList.contains('navigation_hack')){
+            if (!this.changeButton.classList.contains('navigation_hack')) {
                 this.changeButton.addEventListener('click', () => {
                     this.makeThemeChanges();
                 });
