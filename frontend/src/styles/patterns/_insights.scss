@@ -48,6 +48,11 @@
             height: rem(300px);
             background-color: setColor(gray, light);
             border-radius: rem(32px);
+
+            img{
+                height: rem(56px);
+                width: rem(58px);
+            }
         }
 
         &__right{
