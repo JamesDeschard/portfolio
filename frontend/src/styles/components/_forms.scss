@@ -14,7 +14,7 @@
             min-width: rem(200px);
             padding: rem($base-font-size) rem(13px);
             border-radius: rem(10px);
-            background-color: setColor(gray, very_light);
+            background-color: rgb(232, 240, 254);
 
             &::placeholder{
                 font-size: rem($base-font-size);

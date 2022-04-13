@@ -47,15 +47,13 @@
                 <img class="icon small_icon" src="{%static 'images/emojis/emoji_hello.png'%}" alt="An emoji of a wave">
 
                 {%else%}
-                <div>
 
-                    <span>Learn more </span>
+                <a href="#cards">Learn more</a>
 
-                    <svg class="icon" aria-hidden="true" focusable="false">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
-                    </svg>
+                <svg class="icon" aria-hidden="true" focusable="false">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-bottom"></use>
+                </svg>
 
-                </div>
 
                 {%endif%}
             </div>
@@ -65,7 +63,7 @@
                 
                 <a href="#ipad">Discover my Work</a>
                 <svg class="icon" aria-hidden="true" focusable="false">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-bottom"></use>
                 </svg>
 
             </div>
@@ -77,18 +75,15 @@
     <div class="greeting__box-right">
 
         <div class="greeting__box-right-circle">
-            <div class="create">
-                {%if path == home%}
-                <img src="{%static 'images/emojis/emoji_palette.png'%}" alt="An emoji of a painting palette">
-                {%elif about in path%}
-                <img  src="{%static 'images/emojis/emoji_working.png'%}" alt="An emoji of a painting palette">
-                {%elif lectures in path%}
-                <img  src="{%static 'images/emojis/emoji_bulb.png'%}" alt="An emoji of a painting palette">
-                {%else%}
-                <img src="{%static 'images/emojis/emoji_painter.png'%}" alt="An emoji of a painting palette">
-                {%endif%}
-            </div>
-
+            {%if path == home%}
+            <img src="{%static 'images/emojis/emoji_palette.png'%}" alt="An emoji of a painting palette">
+            {%elif about in path%}
+            <img  src="{%static 'images/emojis/emoji_working.png'%}" alt="An emoji of a painting palette">
+            {%elif lectures in path%}
+            <img  src="{%static 'images/emojis/emoji_bulb.png'%}" alt="An emoji of a painting palette">
+            {%else%}
+            <img src="{%static 'images/emojis/emoji_painter.png'%}" alt="An emoji of a painting palette">
+            {%endif%}
         </div>
     </div>
 

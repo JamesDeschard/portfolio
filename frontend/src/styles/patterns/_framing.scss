@@ -1,5 +1,9 @@
 .framing {
+    @include mq(md){
+        margin-bottom: rem(138px);
+    }
     @include justifyCenterCol;
+    margin-bottom: rem(100px);
 
     &__title {
         @include title;
@@ -20,7 +24,6 @@
 
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: rem(138px);
         gap: rem($base-font-size);
 
         &__card{
@@ -32,6 +35,7 @@
             border-radius: rem(32px);
             background-color: setColor(gray, light);
             padding: rem(40px) rem(32px);  
+            transition: all .5s ease-in-out;
             
             &__top {
                 display: flex;

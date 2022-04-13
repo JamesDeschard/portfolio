@@ -1,10 +1,14 @@
 {%load static%}
 
-<button id="changeColor" data-module="ChangeTheme">Change color</button>
+{% if detail_page and '/projects/' in request.path%}
 
-{% if detail_page and '/projects/' in request.path %}
+<nav class="navigation_hack dark-bg" data-module="ChangeTheme">
+    <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}" alt="An arrow heading left (back)"></a>
+</nav>
 
-<nav class="navigation_hack">
+{% elif detail_page and '/lectures/' in request.path %}
+
+<nav class="navigation_hack" data-module="ChangeTheme">
     <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}" alt="An arrow heading left (back)"></a>
 </nav>
 
@@ -12,20 +16,13 @@
 
 <nav class="navigation" data-module="NavigationIndicator">
 
-    <div class="navigation__avatar">
-        {% if detail_page%}
-
-        <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}" alt="An arrow heading left (back)"></a>
-
-        {% else %}
+    {% if not detail_page %}
+    <div class="navigation__avatar" data-module="ChangeTheme">
         
         <img class="white" src="{%static 'images/white_avatar.png'%}" alt="Avatar of James Deschard">
         <img class="black" src="{%static 'images/black_avatar.png'%}" alt="Avatar of James Deschard">
 
-        {%endif%}
     </div>
-
-    {% if not detail_page %}
 
     <div class="navigation__hamburger" data-module="ResponsiveNavigation" data-context="@media (max-width: 768px)">
 

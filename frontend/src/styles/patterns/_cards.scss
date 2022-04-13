@@ -40,7 +40,7 @@
 
 .cards{
     @include justifyCenterCol;
-    height: rem(625px);
+    height: 625px;
     transition: height 1s ease-in-out;
 
     &__flipped{
@@ -52,13 +52,7 @@
     }
 
     .cards__container{
-
-        @include mq(lg){
-            flex-direction: row;
-        }
-        
-        @include justifyCenterCol;
-
+        @include justifyCenterRow;
         width: 100%;
 
         &__flipped{
@@ -69,13 +63,18 @@
         }
 
         &__left{
-            @include mq(lg){
-                justify-content: flex-end;
-                width: 20%;
+            @include mq(md){
+                transform: translate(0) !important;
+            }
+            @include mq(sm){
+                transform: translate(100px, -300px);
             }
 
             display: flex;
             justify-content: center; 
+            width: 20%;
+            transition: all .5s ease-in-out;
+            transform: translate(35px, -300px);
             
             &__circle{
                 @include small_circle
@@ -90,14 +89,19 @@
 
             &__card{
                 @include mq(lg){
-                    height: rem(432px);
-                    width: rem(400px);
+                    height: rem(432px) !important;
+                    width: rem(400px) !important;
+                }
+
+                @include mq(sm){
+                    height: rem(360px);
+                    width: rem(333px);
                 }
 
                 position: absolute;
 
-                height: rem(360px);
-                width: rem(333px);
+                height: rem(380px);
+                width: rem(250px);
 
                 transition: all 1s ease;
             }
@@ -111,13 +115,19 @@
         }
 
         &__right{
-            @include mq(lg){
-                justify-content: flex-start;
-                width: 20%;
+            @include mq(md){
+                transform: translate(0) !important;
+            }
+
+            @include mq(sm){
+                transform: translate(-100px, -300px);
             }
 
             display: flex;
             justify-content: center;
+            width: 20%;
+            transition: all .5s ease-in-out;
+            transform: translate(-35px, -300px);
 
             &__circle{
                 @include small_circle

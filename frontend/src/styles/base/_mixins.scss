@@ -228,27 +228,6 @@
 
 // App Mixins
 
-// Circle
-
-@mixin circle {
-  @include mq(lg){
-    height: rem($circle-circumference-large) !important;
-    width: rem($circle-circumference-large) !important;   
-  }
-
-  @include mq(sm){
-    height: rem($circle-circumference-medium);
-    width: rem($circle-circumference-medium);
-  }
-
-  height: rem($circle-circumference-small);
-  width: rem($circle-circumference-small);
-  position: relative;
-  display: block; 
-  border-radius: 50%;
-  background-color: setColor(gray, light);
-}
-
 // Justify Content Center-Row
 @mixin justifyCenterRow{
   display: flex;
@@ -292,9 +271,13 @@
 //small circle
 
 @mixin small_circle{
+  @include mq(lg){
+    height: rem(112px);
+    width: rem(112px);
+  }
   @include justifyCenterCol;
-  height: rem(112px);
-  width: rem(112px);
+  height: rem(90px);
+  width: rem(90px);
   border-radius: 50%;
   background-color: setColor(gray, light);
   cursor: pointer;

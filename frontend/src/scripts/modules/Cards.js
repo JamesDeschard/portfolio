@@ -159,15 +159,15 @@ export default NavigationIndicator => {
 
         moveSmileyFaces() {
             if (this.tracker) {
-                this.emojiTrue.classList.remove('move-in-right');
-                this.emojiFalse.classList.remove('move-in-left');
-                this.emojiTrue.classList.add('move-out-right');
-                this.emojiFalse.classList.add('move-out-left');
+                this.emojiTrue.firstElementChild.classList.remove('move-in-right');
+                this.emojiFalse.firstElementChild.classList.remove('move-in-left');
+                this.emojiTrue.firstElementChild.classList.add('move-out-right');
+                this.emojiFalse.firstElementChild.classList.add('move-out-left');
             } else {
-                this.emojiTrue.classList.remove('move-out-right');
-                this.emojiFalse.classList.remove('move-out-left');
-                this.emojiTrue.classList.add('move-in-right');
-                this.emojiFalse.classList.add('move-in-left');
+                this.emojiTrue.firstElementChild.classList.remove('move-out-right');
+                this.emojiFalse.firstElementChild.classList.remove('move-out-left');
+                this.emojiTrue.firstElementChild.classList.add('move-in-right');
+                this.emojiFalse.firstElementChild.classList.add('move-in-left');
             }
         }
 

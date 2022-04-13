@@ -4,22 +4,22 @@
 }
 
 .move-out-right{
-    animation: 0.5s move-out-right ease-out;
+    animation: .75s move-out-right ease-out;
     animation-fill-mode: forwards; 
 }
 
 .move-out-left{
-    animation: 0.5s move-out-left ease-out;
+    animation: .75s move-out-left ease-out;
     animation-fill-mode: forwards; 
 }
 
 .move-in-right{
-    animation: 0.5s move-in-right ease-in;
+    animation: .75s move-in-right ease-in;
     animation-fill-mode: forwards; 
 }
 
 .move-in-left{
-    animation: 0.5s move-in-left ease-in;
+    animation: .75s move-in-left ease-in;
     animation-fill-mode: forwards; 
 }
 
@@ -31,8 +31,11 @@
 }
 
 .adjust-height{
+    @include mq(md){
+        height: rem(calc(432px * 2 + 50px * 2)) !important;
+    }
     margin-top: rem(50px);
-    height: rem(950px) !important;
+    height: rem(calc(360px * 4 + 50px * 4)) !important;
 }   
 
 .prepare-card{

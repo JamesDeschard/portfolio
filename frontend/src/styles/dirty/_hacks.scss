@@ -24,13 +24,22 @@
     background-color: setColor(white);
     color: setColor(black);
     justify-content: flex-start;
-    margin-left: rem($base-font-size);
+    cursor: pointer;
+        
+    a {
+        color: setColor(black);
+    }
+    svg{
+        cursor: auto;
+        color: setColor(black);
+    }
+    &:hover svg{
+        animation: 1s up-down ease-in-out infinite;
+    }
 }
 
 
 .navigation_hack{
-    background-color: setColor(gray, project-bg);
-
     a {
         display: flex;
         width: rem(1136px);
@@ -40,6 +49,10 @@
         margin: auto;
         padding-top: rem(56px);
     }
+}
+
+.dark-bg {
+    background-color: setColor(gray, project-bg);
 }
 
 .rotated{

@@ -1,119 +1,140 @@
-.greeting{
-    @include mq(lg){
+.greeting {
+    @include mq(md) {
         flex-direction: row;
-        padding: rem(179px) 0 !important;
-    }
-
-    @include mq(md){
-        padding: rem(125px) 0;
+        padding: rem(179px) 0;
     }
 
     display: flex;
     flex-direction: column;
-    padding: rem(50px) 0 rem(200px) 0 ;
+    justify-content: space-between;
+    gap: rem(15px);
+    padding-top: rem(100px);
+    padding-bottom: rem(50px);
 
-
-    &__box-left{
-        @include mq(lg){
-            margin-bottom: 0 !important;
+    &__box-left {
+        @include mq(md) {
             width: 50%;
         }
 
-        @include mq(sm){
-            margin-bottom: rem(250px);
-        }
-
-        margin-bottom: rem(175px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: rem(50px);
     }
 
-    &__box-left-title{
+    &__box-left-title {
         @include title;
     }
 
-    &__box-left-overview{
+    &__box-left-overview {
         @include overview;
-        
-        color: setColor(black );
 
+        color: setColor(black);
         font-size: rem(17px);
-
         margin-bottom: rem(24px);
     }
 
     // About page extra paragraphe
 
-    &__box-left-sub-overview{
+    &__box-left-sub-overview {
         color: setColor(gray, small_font);
         margin-bottom: rem(24px);
     }
 
-    &__interactions{
+    &__interactions {
+
         display: flex;
 
         svg {
             margin-left: rem(5px);
-            transform: rotate(90deg);
         }
     }
 
-    &__interaction-left{
+    &__interaction-left {
         @include justifyCenterRow;
-
-        min-width: rem(122px);
         border-radius: rem(10px);
         background-color: setColor(black);
+        padding: rem(13px) rem(24px);
 
         a {
-            color: setColor(white); 
+            color: setColor(white);
         }
 
-        &:hover img{
+        svg {
+            margin-bottom: rem(2px);
+            color: setColor(white);
+        }
+
+        &:hover img {
             animation: hello .5s infinite ease-in-out;
+        }
+
+        &:hover svg {
+            animation: 1s up-down ease-in-out infinite;
         }
     }
 
-    &__interaction-right{
-        
-        @include justifyCenterRow;
+    &__interaction-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: rem(206px);
-        margin-right: auto;
         height: rem(48px);
         cursor: pointer;
-        
+
         a {
             color: setColor(black);
         }
 
-        &:hover svg{
+        svg {
+            cursor: auto;
+        }
+
+        &:hover svg {
             animation: 1s up-down ease-in-out infinite;
         }
     }
 
     &__box-right {
-        @include mq(lg){
-            width: 50%;  
+        @include mq(md) {
+            width: 50%;
             justify-content: flex-end;
         }
 
-        @include justifyCenterRow;
-        
-        &-circle{
-            position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-            .create{
-                @include circle;
-                @include justifyCenterCol;
+        &-circle {
+            width: $circle-circumference-large;
+            height: $circle-circumference-large;
+            background-color: setColor(gray, light);
+            border-radius: 50%;
+            position: relative;
 
-                img{
-                    height: rem($circle-inside-emoji-dimension);
-                    width: rem($circle-inside-emoji-dimension);
-                }
+
+            img{
+                position: absolute; 
+                left: 0; 
+                right: 0; 
+                top: 0;
+                bottom: 0;
+                margin: rem(188px) auto 0 auto;
+                width: $circle-inside-emoji-dimension;
+                height: $circle-inside-emoji-dimension;
             }
         }
+
+        &-circle::before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+
     }
 }
 
-.lighter-font{
+.lighter-font {
     color: setColor(gray, light) !important;
 }
-
