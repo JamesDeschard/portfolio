@@ -1,14 +1,14 @@
-.project{ 
+.project {
     background-color: setColor(gray, project-bg);
 }
 
-.project__container{
+.project__container {
 
-    @include mq(lg){
+    @include mq(lg) {
         padding-top: 0;
     }
 
-    @include mq(md){
+    @include mq(md) {
         flex-direction: row;
     }
 
@@ -22,35 +22,38 @@
     padding-top: rem(50px);
     margin-inline: auto;
 
-    &__left{
-        @include mq(md){
+    &__left {
+        @include mq(md) {
             width: 50%;
         }
+
         @include justifyCenterCol;
         align-items: flex-start;
 
-        &__title{
+        &__title {
             @include title;
-            a{
+
+            a {
                 color: setColor(black);
             }
-            
+
         }
 
-        &__sub-title{
+        &__sub-title {
             @include overview;
             margin-top: rem(24px);
         }
     }
 
-    &__right{
-        @include mq(md){
+    &__right {
+        @include mq(md) {
             width: 50%;
         }
+
         @include justifyCenterCol;
 
-        img{
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.2) 85%, rgba(0,0,0,0)); 
+        img {
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0));
         }
     }
 }

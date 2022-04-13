@@ -1,12 +1,12 @@
-.cards-intro{
+.cards-intro {
     @include justifyCenterCol;
     padding-top: rem(75px);
 
-    &__title{
+    &__title {
         @include title;
     }
 
-    &__overview{
+    &__overview {
         @include overview;
         margin-bottom: rem(75px);
         font-size: rem(34px);
@@ -14,11 +14,11 @@
     }
 }
 
-.cards-outro{
+.cards-outro {
     @include justifyCenterCol;
     padding-bottom: rem(75px);
 
-    &__show-all{
+    &__show-all {
         @include justifyCenterRow;
 
         max-width: rem(250px);
@@ -38,12 +38,12 @@
     }
 }
 
-.cards{
+.cards {
     @include justifyCenterCol;
     height: 625px;
     transition: height 1s ease-in-out;
 
-    &__flipped{
+    &__flipped {
         display: flex;
         justify-content: center;
         gap: rem(50px);
@@ -51,49 +51,50 @@
         margin-right: rem(-15px);
     }
 
-    .cards__container{
+    .cards__container {
         @include justifyCenterRow;
         width: 100%;
 
-        &__flipped{
+        &__flipped {
             display: flex;
             gap: rem(15px);
             flex-wrap: wrap;
             margin-right: rem(-15px);
         }
 
-        &__left{
-            @include mq(md){
+        &__left {
+            @include mq(md) {
                 transform: translate(0) !important;
             }
-            @include mq(sm){
+
+            @include mq(sm) {
                 transform: translate(100px, -300px);
             }
 
             display: flex;
-            justify-content: center; 
+            justify-content: center;
             width: 20%;
             transition: all .5s ease-in-out;
             transform: translate(35px, -300px);
-            
-            &__circle{
+
+            &__circle {
                 @include small_circle
             }
         }
 
-        &__center{
+        &__center {
             @include justifyCenterRow;
             width: 60%;
             height: 100%;
             position: relative;
 
-            &__card{
-                @include mq(lg){
+            &__card {
+                @include mq(lg) {
                     height: rem(432px) !important;
                     width: rem(400px) !important;
                 }
 
-                @include mq(sm){
+                @include mq(sm) {
                     height: rem(360px);
                     width: rem(333px);
                 }
@@ -107,19 +108,19 @@
             }
 
             @for $i from 0 through 4 {
-                &__card:nth-of-type(#{$i}){
+                &__card:nth-of-type(#{$i}) {
                     transform: rotate(calc(#{$i} * -10deg + 10deg));
                     z-index: -#{$i};
                 }
             }
         }
 
-        &__right{
-            @include mq(md){
+        &__right {
+            @include mq(md) {
                 transform: translate(0) !important;
             }
 
-            @include mq(sm){
+            @include mq(sm) {
                 transform: translate(-100px, -300px);
             }
 
@@ -129,20 +130,20 @@
             transition: all .5s ease-in-out;
             transform: translate(-35px, -300px);
 
-            &__circle{
+            &__circle {
                 @include small_circle
             }
         }
     }
 }
 
-.cards__container__center__card{
+.cards__container__center__card {
     display: flex;
     flex-direction: column;
-    box-sizing:border-box;
-    perspective:600px;
+    box-sizing: border-box;
+    perspective: 600px;
 
-    &__part{
+    &__part {
         position: absolute;
         top: 0;
         left: 0;
@@ -154,46 +155,44 @@
         background-color: setColor(white);
         border-radius: rem(32px);
         box-shadow: 3px 5px 7px 5px setColor(gray, light);
-        
+
         transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transform-style: preserve-3d;
         backface-visibility: hidden;
 
         z-index: 1000;
 
-        &__number{
+        &__number {
             display: flex;
             justify-content: flex-start;
             height: rem(48px);
-            
+
             color: setColor(gray, dark_font);
             font-size: fluid-type(24, 18, 768, 1500);
-            margin-bottom: rem($base-font-size); 
+            margin-bottom: rem($base-font-size);
         }
-    
-        &__text{
+
+        &__text {
             @include fluid-type(24, 34, 768, 1500);
         }
     }
 
-    &__front{
+    &__front {
         transform: rotateY(0deg);
     }
 
-    &__back{
+    &__back {
         @include justifyCenterCol;
         transform: rotateY(-180deg);
         background-color: setColor(gray, light);
     }
 
-    
-    &:hover .activate-hover-1{
+
+    &:hover .activate-hover-1 {
         transform: rotateY(180deg);
     }
 
-    &:hover .activate-hover-2{
+    &:hover .activate-hover-2 {
         transform: rotateY(0deg);
     }
 }
-
-

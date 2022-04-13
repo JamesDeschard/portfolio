@@ -1,5 +1,5 @@
 .navigation {
-    @include mq(md){
+    @include mq(md) {
         padding-top: rem(56px);
         justify-content: flex-start;
     }
@@ -12,11 +12,11 @@
     max-width: calc(100% - 40px);
 
     &__avatar {
-        @include mq(md){
+        @include mq(md) {
             justify-content: flex-start;
-            width: 25%; 
+            width: 25%;
         }
-        
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -26,16 +26,16 @@
             border-radius: 50%;
             transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-            &:hover{
+            &:hover {
                 transform: rotate(360deg);
             }
         }
     }
 
-    &__hamburger{
-        @include mq(md){
+    &__hamburger {
+        @include mq(md) {
             display: none;
-        }   
+        }
 
         display: flex;
         margin-left: auto;
@@ -46,7 +46,7 @@
     }
 
     &__links {
-        @include mq(md){
+        @include mq(md) {
             display: flex;
             justify-content: space-between;
             width: 50%;
@@ -63,8 +63,8 @@
                 color: setColor(gray, dark_font);
                 position: relative;
 
-                &::after{
-                    content:'\25CF';
+                &::after {
+                    content: '\25CF';
                     position: absolute;
                     display: flex;
                     justify-content: center;
@@ -76,9 +76,9 @@
         }
     }
 
-    &__social-media{
+    &__social-media {
 
-        @include mq(md){
+        @include mq(md) {
             display: flex;
             justify-content: flex-end;
             margin: auto 0;
@@ -86,16 +86,9 @@
         }
 
         display: none;
-        
+
         a {
             color: setColor(black);
         }
     }
 }
-
-#changeColor {
-    position: absolute;
-    top: 200px;
-    right: 200px;
-}
-

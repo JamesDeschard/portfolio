@@ -1,34 +1,34 @@
-.ipad{
-    @include mq(sm){
-        margin-top: rem(104px); 
+.ipad {
+    @include mq(sm) {
+        margin-top: rem(104px);
     }
 
-    &__text-container{
+    &__text-container {
         @include justifyCenterCol;
         margin: auto;
         max-width: rem(654px);
     }
-    
-    &__tags-container{
+
+    &__tags-container {
         @include justifyCenterRow;
 
-        &-tag{
+        &-tag {
             @include justifyCenterCol;
             @include tag;
         }
     }
 
-    &__title{
+    &__title {
         @include title;
     }
 
-    &__overview{
+    &__overview {
         @include overview;
         text-align: center;
-     
+
     }
 
-    &__discover{
+    &__discover {
         @include justifyCenterRow;
         margin-top: rem($base-font-size);
         padding: rem(13px) rem($base-font-size);
@@ -38,22 +38,22 @@
             color: setColor(black);
         }
 
-        &:hover svg{
+        &:hover svg {
             transform: translate(20px);
         }
 
-        svg{
+        svg {
             margin-left: rem(5px);
             transition: all .5s ease-in-out;
-        }  
+        }
     }
 
-    &__ipad{
+    &__ipad {
         @include justifyCenterCol;
         margin-top: rem(26px);
 
         img {
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.2) 85%, rgba(0,0,0,0)); 
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0));
             width: 100%;
         }
     }

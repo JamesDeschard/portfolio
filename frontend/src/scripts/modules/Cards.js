@@ -117,11 +117,13 @@ export default NavigationIndicator => {
 
             this.cards.forEach((card) => {
                 card.classList.remove('notransition');
-                card.style.transform = 'rotate(0deg)';
                 if (reset === true) {
                     card.style.transform = `rotate(-${counter}deg)`;
                     counter += 10;
 
+                }
+                else {
+                    card.style.transform = 'rotate(0deg)';
                 }
             });
         }

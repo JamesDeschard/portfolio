@@ -1,7 +1,8 @@
 .framing {
-    @include mq(md){
+    @include mq(md) {
         margin-bottom: rem(138px);
     }
+
     @include justifyCenterCol;
     margin-bottom: rem(100px);
 
@@ -9,7 +10,7 @@
         @include title;
     }
 
-    &__overview{
+    &__overview {
         @include overview;
         max-width: rem(654px);
         margin: auto;
@@ -17,8 +18,8 @@
         margin-bottom: rem(40px);
     }
 
-    &__cards{
-        @include mq(lg){
+    &__cards {
+        @include mq(lg) {
             margin-right: rem(-$base-font-size);
         }
 
@@ -26,17 +27,17 @@
         flex-wrap: wrap;
         gap: rem($base-font-size);
 
-        &__card{
-            @include mq(lg){
+        &__card {
+            @include mq(lg) {
                 width: calc(50% - $base-font-size);
-                padding: rem(40px) rem(32px); 
+                padding: rem(40px) rem(32px);
             }
 
             border-radius: rem(32px);
             background-color: setColor(gray, light);
-            padding: rem(40px) rem(32px);  
+            padding: rem(40px) rem(32px);
             transition: all .5s ease-in-out;
-            
+
             &__top {
                 display: flex;
                 justify-content: space-between;
@@ -44,7 +45,7 @@
                 color: setColor(gray, dark_font);
             }
 
-            &__text{
+            &__text {
                 @include fluid-type(28, 21, 1500, 0);
                 margin-top: rem(32px);
                 color: setColor(black);

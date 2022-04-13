@@ -1,5 +1,5 @@
-.email{
-    @include mq(md){
+.email {
+    @include mq(md) {
         flex-direction: row;
         gap: rem(10px);
         padding: rem(128px) 0;
@@ -10,29 +10,29 @@
     flex-direction: column-reverse;
     padding-top: rem(50px);
     padding-bottom: rem(75px);
-    
-    &__left-box{
-        @include mq(md){
+
+    &__left-box {
+        @include mq(md) {
             width: 50%;
             margin-top: 0;
         }
 
         margin-top: rem(50px);
 
-        &__title{
+        &__title {
             @include title;
             margin-bottom: rem(32px);
         }
 
-        &__overview{
+        &__overview {
             @include overview;
             color: setColor(black);
-            margin-bottom: rem(32px);  
+            margin-bottom: rem(32px);
         }
     }
 
     // Override circle <div> to align with above element
-    .greeting__box-right{
+    .greeting__box-right {
         justify-content: center;
     }
 }

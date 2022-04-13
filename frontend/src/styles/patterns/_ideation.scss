@@ -1,17 +1,17 @@
-.ideation{
+.ideation {
     padding: rem(88px) 0;
 
-    &__title{
+    &__title {
         @include title;
     }
 
-    &__overview{
+    &__overview {
         @include overview;
         margin-bottom: rem(58px);
     }
 
-    &__image{
+    &__image {
         cursor: auto;
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5)); 
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
     }
 }

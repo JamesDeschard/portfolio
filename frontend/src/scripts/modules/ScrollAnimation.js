@@ -8,10 +8,12 @@ import {
     ScrollToPlugin
 } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin,);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, );
 
 // eslint-disable-next-line no-unused-vars
 export default ScrollAnimation => {
+
+    // Greeting and Email paragraphs
 
     const animation_targets = [".greeting__box-left", ".email__left-box"];
 
@@ -35,6 +37,7 @@ export default ScrollAnimation => {
     }
 
     // Ipad
+
     gsap.timeline({
         scrollTrigger: {
             trigger: '.ipad__ipad',
@@ -59,6 +62,7 @@ export default ScrollAnimation => {
     }
 
     // Iphones
+    
     images.forEach((image) => {
         gsap.timeline({
             scrollTrigger: {
@@ -81,7 +85,7 @@ export default ScrollAnimation => {
     const cards = document.querySelectorAll('.cards__container__center__card');
     var mydelay = 0;
 
-    for (let item of cards){
+    for (let item of cards) {
 
         gsap.timeline({
             scrollTrigger: {
@@ -97,7 +101,7 @@ export default ScrollAnimation => {
             y: 0,
             duration: 0.3,
             delay: mydelay,
-            clearProps:"scale"
+            clearProps: "scale"
         });
 
         mydelay += 0.5;
@@ -149,7 +153,7 @@ export default ScrollAnimation => {
     var delay = 0;
     var counter = 0;
 
-    for (let item of framing_cards){
+    for (let item of framing_cards) {
         gsap.timeline({
             scrollTrigger: {
                 trigger: item,
@@ -164,7 +168,7 @@ export default ScrollAnimation => {
             y: 0,
             duration: 0.3,
             delay: delay,
-            clearProps:"scale"
+            clearProps: "scale"
         });
 
         counter += 1;

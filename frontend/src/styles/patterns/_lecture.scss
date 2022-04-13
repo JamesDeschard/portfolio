@@ -1,7 +1,7 @@
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
-.lecture{
-    @include mq(lg){
+.lecture {
+    @include mq(lg) {
         margin: 0 auto;
     }
 
@@ -9,27 +9,27 @@
     margin-top: rem(50px);
     margin-inline: auto;
 
-    &__tags-box{
+    &__tags-box {
         display: flex;
         justify-content: flex-start;
         gap: rem(8px);
 
-        &__tag{
+        &__tag {
             @include tag;
         }
     }
 
-    &__title{
+    &__title {
         @include title;
         margin: rem(28px) 0;
     }
 
-    &__date{
+    &__date {
         font-size: rem(15px);
         color: setColor(gray, dark_font);
         margin-bottom: rem(42px);
 
-        &__dot{
+        &__dot {
             display: inline-block;
             vertical-align: middle;
             height: rem(3px);
@@ -39,31 +39,31 @@
         }
     }
 
-    &__illustration{
+    &__illustration {
         @include justifyCenterCol;
         width: 100%;
         margin-bottom: rem(24px);
         height: rem(312px);
         border-radius: rem(32px);
         background-color: setColor(gray, light);
-        
+
     }
 
-    &__text{
+    &__text {
         margin: rem(88px) 0;
 
-        h2{
+        h2 {
             font-size: rem(32px);
             font-weight: 600;
         }
 
-        h2:not(h2:first-of-type){
+        h2:not(h2:first-of-type) {
             margin-top: rem(58px);
         }
 
-        p{
+        p {
             margin-top: rem(40px);
             color: setColor(gray, very_dark)
         }
     }
-}   
+}

@@ -7,10 +7,10 @@
     min-height: rem(112px);
 }
 
-.navigation{
-    &__copyright{
-        @include mq(md){
-            width: 25%;  
+.navigation {
+    &__copyright {
+        @include mq(md) {
+            width: 25%;
         }
 
         display: flex;
@@ -19,11 +19,11 @@
         margin-bottom: rem(-1px);
     }
 
-    &__back-up{
-        @include mq(md){
-            width: 25%;  
+    &__back-up {
+        @include mq(md) {
+            width: 25%;
         }
-        
+
         display: flex;
         margin-left: auto;
         justify-content: flex-end;

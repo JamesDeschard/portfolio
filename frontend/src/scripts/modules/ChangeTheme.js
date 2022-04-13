@@ -39,8 +39,9 @@ export default ChangeTheme => {
             this.theme = 'white';
             this.white_theme = 'inline';
             this.black_theme = 'none';
-            this.checkUserTheme();
+
             this.bindEvent();
+            this.checkUserTheme();
             this.adaptTheme();
         }
 

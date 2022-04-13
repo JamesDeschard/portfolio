@@ -1,68 +1,69 @@
-.more{
-    @include mq(sm){
+.more {
+    @include mq(sm) {
         padding: rem(50px);
     }
 
-    @include mq(lg){
+    @include mq(lg) {
         padding: rem(75px) 0 !important;
     }
+
     padding: 0;
 
-    &__title{
+    &__title {
         @include title;
     }
 
-    &__container{
+    &__container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         gap: rem(56px);
-        margin: rem(24px) 0 rem(27px) 0 ;  
+        margin: rem(24px) 0 rem(27px) 0;
     }
 }
 
-.more__container-box{
+.more__container-box {
 
-    @include mq(md){
+    @include mq(md) {
         width: calc(50% - 56px);
     }
 
-    &__image-box{
+    &__image-box {
         @include justifyCenterCol;
         height: rem(352px);
         background-color: setColor(gray, light);
         border-radius: rem(32px);
 
-        img{
+        img {
             height: rem($circle-inside-emoji-dimension);
             width: rem($circle-inside-emoji-dimension);
         }
 
     }
 
-    &__title{
+    &__title {
 
         font-size: rem(24px);
         font-weight: 600;
         margin-top: rem($base-font-size);
 
-        a{
+        a {
             color: setColor(black);
         }
     }
 
-    &__overview{
+    &__overview {
         font-size: rem($base-font-size);
         color: setColor(gray, dark_font);
         margin: rem($base-font-size) 0;
     }
 
-    &__tag-box{
+    &__tag-box {
         display: flex;
         justify-content: flex-start;
         gap: calc(rem(8px));
 
-        &__tag{
+        &__tag {
             @include tag;
         }
     }
