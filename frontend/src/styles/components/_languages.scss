@@ -1,0 +1,13 @@
+.languages form{
+    @include mq(md){
+        display: flex
+    }
+
+    display: none;
+    position: absolute;
+    gap: rem(10px);
+    top: rem(20px);
+    right: rem(20px);
+
+    cursor: pointer;
+}

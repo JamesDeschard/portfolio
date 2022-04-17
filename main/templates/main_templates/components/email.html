@@ -1,17 +1,33 @@
 {% load static %}
+{% load i18n %}
 
 <div class="email">
     <div class="email__left-box">
         <div class="email__left-box__title">
-            <h2>Reach out for more?</h2>
+            <h2>{{email.title | safe}}</h2>
         </div> 
         <div class="email__left-box__overview">
-            <p>{% lorem 30 w%}</p>
+            <p>{{email.overview | safe}}</p>
         </div>  
 
-        <form method="POST" enctype="text/plain" action="">
-            <input type="text" id="email" placeholder="Enter you email adress...">
-            <input type="submit" value="See you soon!">
+        <form method="POST" enctype="text/plain" data-module='Captcha'>
+            {% csrf_token %}
+            <div class="first-box">
+                {{form.email}}
+                <button type="button" class='captcha-button'>{% trans 'Send me an email!' %} &#128231;</button>
+            </div>
+            <div class="second-box no-display">
+                <label for='{{form.captcha.id_for_label}}'>{% trans 'Please fill in this captcha:' %}</label>
+                <div class="second-box__inputs">
+                    {{form.captcha}}
+                    <input type="submit" value="{% trans 'Confirm!' %}">
+                </div>
+            </div>
+
+            <div class="third-box no-display">
+                <button>{% trans 'An email has been sent! See you soon!' %} &#128512;</button>
+            </div>
+           
         </form>
 
     </div>
@@ -22,8 +38,9 @@
             <div class="create">
                 <img  
                 src="{%static 'images/emojis/emoji_dropbox.png'%}" 
-                alt="An emoji of a painting palette">
+                alt="{% trans 'A graphic representation of a dropbox' %}">
             </div>
         </div>
+        
     </div>
 </div>

@@ -1,11 +1,13 @@
 {% load static %}
+{% load i18n %}
+
 <div class="insights">
     <div class="insights__presentation">
         <div class="insights__title">
-            <h2>Insights</h2>
+            <h2>{% trans 'Insights' %}</h2>
         </div>
         <div class="insights__overview">
-            {% lorem 15 w %}
+            {% trans 'Here are some of the things I learned thanks to this project.' %} 
         </div>
     </div>
 
@@ -15,11 +17,11 @@
         </div>
 
         <div class="insights__table__right">
-            {% for i in "123"|make_list %}
+            {% for point in current.points %}
             <div class="insights__table__right__point">
                 <div class="insights__table__right__point__title">
-                    <span>Point {{i}}</span>
-                    <p>{% lorem 30 w%}</p>
+                    <span>Point {{forloop.counter}}</span>
+                    <p>{{point}}</p>
                 </div>
             </div>
             {% endfor %}

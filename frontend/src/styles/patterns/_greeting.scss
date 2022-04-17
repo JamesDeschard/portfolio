@@ -1,7 +1,7 @@
 .greeting {
     @include mq(md) {
         flex-direction: row;
-        padding: rem(179px) 0;
+        padding: rem(150px) 0;
     }
 
     display: flex;
@@ -14,13 +14,14 @@
     &__box-left {
         @include mq(md) {
             width: 50%;
+            margin-bottom: 0;
         }
 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        margin-bottom: rem(50px);
+        margin-bottom: rem(60px);
     }
 
     &__box-left-title {

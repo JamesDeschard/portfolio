@@ -4,7 +4,8 @@ from main.base_classes.base_classes import BaseAllPostPage, BasePostDetailPage
 
 class BlogPage(BaseAllPostPage):
     template_name = "blog_template/blogpage.html"
-    model_name = Post
+    post_model_name = Post
+    intro_model_title = 'ENGLISH Lectures'
 
 
 class BlogDetail(BasePostDetailPage):

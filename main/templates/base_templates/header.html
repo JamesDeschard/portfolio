@@ -1,15 +1,18 @@
 {%load static%}
+{% load i18n %}
 
-{% if detail_page and '/projects/' in request.path%}
+{% if detail_page and '/projects/' in request.path or detail_page and '/projets/' in request.path%}
 
 <nav class="navigation_hack dark-bg" data-module="ChangeTheme">
-    <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}" alt="An arrow heading left (back)"></a>
+    <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}"
+            alt="An arrow heading left (back)"></a>
 </nav>
 
-{% elif detail_page and '/lectures/' in request.path %}
+{% elif detail_page and '/lectures/' in request.path or detail_page and '/cours/' in request.path %}
 
 <nav class="navigation_hack" data-module="ChangeTheme">
-    <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}" alt="An arrow heading left (back)"></a>
+    <a href="{% url 'homepage'%}"><img src="{%static 'images/left_arrow_white.png'%}"
+            alt="An arrow heading left (back)"></a>
 </nav>
 
 {% else %}
@@ -18,9 +21,9 @@
 
     {% if not detail_page %}
     <div class="navigation__avatar" data-module="ChangeTheme">
-        
-        <img class="white" src="{%static 'images/white_avatar.png'%}" alt="Avatar of James Deschard">
-        <img class="black" src="{%static 'images/black_avatar.png'%}" alt="Avatar of James Deschard">
+
+        <img class="white" src="{%static 'images/white_avatar.png'%}" alt="{% trans 'Avatar of James Deschard'%}">
+        <img class="black" src="{%static 'images/black_avatar.png'%}" alt="{% trans 'Avatar of James Deschard'%}">
 
     </div>
 
@@ -28,27 +31,34 @@
 
         <div class="plate plate1" onclick="this.classList.toggle('active')">
             <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-              <path class="line line1" d="M 30,65 H 70"/>
-              <path class="line line2" d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"/>
-              <path class="line line3" d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"/>
+                <path class="line line1" d="M 30,65 H 70" />
+                <path class="line line2"
+                    d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695" />
+                <path class="line line3"
+                    d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695" />
             </svg>
             <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-              <path class="line" d="M 34,32 L 66,68" />
-              <path class="line" d="M 66,32 L 34,68" />
+                <path class="line" d="M 34,32 L 66,68" />
+                <path class="line" d="M 66,32 L 34,68" />
             </svg>
         </div>
 
     </div>
 
     <div class="navigation__hamburger-content">
+
+
+        <div class="navigation__hamburger-content__languages">
+           
+        </div>
         <div class="navigation__hamburger-content__title">
             <h2>Menu</h2>
         </div>
         <ul class="navigation__hamburger-content__links">
-            <li><a href="{%url 'homepage'%}">Projects</a></li>
-            <li><a href="{%url 'aboutpage'%}">About</a></li>
-            <li><a href="{%url 'lectures'%}">Lectures</a></li>
-            <li><a href="{%url 'experimentspage'%}">Experiments</a></li>
+            <li><a href="{%url 'homepage'%}">{% trans 'Projects'%}</a></li>
+            <li><a href="{%url 'aboutpage'%}">{% trans 'About'%}</a></li>
+            <li><a href="{%url 'lectures'%}">{% trans 'Lectures'%}</a></li>
+            <li><a href="{%url 'experimentspage'%}">{% trans 'Experiments'%}</a></li>
             <li><a href="https://www.linkedin.com/in/james-deschard-771733218/">@LinkedIn</a></li>
         </ul>
     </div>
@@ -60,12 +70,13 @@
     {%block navlinks%}{%include 'base_templates/components/navigation_links.html'%}{%endblock%}
 
     <div class="navigation__social-media">
-        <a href="https://www.linkedin.com/in/james-deschard-771733218/" >@LinkedIn</a>
+        <a href="https://www.linkedin.com/in/james-deschard-771733218/">@LinkedIn</a>
     </div>
 
     {%endif%}
 
 </nav>
 
-{%endif%}
+{%block languages%}{%include 'base_templates/components/languages.html'%}{%endblock%}
 
+{%endif%}

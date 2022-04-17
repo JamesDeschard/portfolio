@@ -1,13 +1,14 @@
 {% load static %}
+{% load i18n %}
 
 <div class="framing">
 
     <div class="framing__title">
-        <h2>Problem Framing</h2>
+        <h2>{% trans 'Problem Framing' %}</h2>
     </div>
 
     <div class="framing__overview">
-        <p>{% lorem 20 w%}</p>
+        <p>{{current.problem_framing_overview|safe}}</p>
     </div>
 
     <div class="framing__cards">

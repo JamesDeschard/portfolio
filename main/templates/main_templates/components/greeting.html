@@ -1,67 +1,74 @@
 {% load static %}
+{% load i18n %}
 
 {% with path=request.path %}
-{% with home='/' %}
-{% with about='/about/' %}
-{% with lectures='/lectures/' %}
+{% with home1='/en/' %}
+{% with home2='/fr/' %}
+{% with about1='/about/' %}
+{% with about2='/a-propos/' %}
+{% with lectures1='/lectures/' %}
+{% with lectures2='/cours/' %}
 {% with experiments='/experiments/' %}
 
 <div class="greeting" data-module="MagneticEffect">
 
     <div class="greeting__box-left">
         <div class="greeting__box-left-title">
-            <h1>Lorem Ipsum Dolor</h1>
+            <h1>{{introduction.title|safe}}</h1>
         </div>
         
-        {% if path == home or about in path%}
+        {% if path == home1 or path == home2 or about in path%}
         <div class="greeting__box-left-overview">
         {%else%}
         <div class="greeting__box-left-overview clearer-font">
         {%endif%}
             
-            {%lorem 30 w%}
-
-            {% if path == home%}
-            <img class="icon" src="{%static 'images/emojis/emoji_smile.png'%}" alt="An emoji of a smiley face">
-            {%endif%}
+            {{introduction.overview|safe}}
 
         </div>
 
-        {%if about in path%}
+        {%if about1 in path or about2 in path%}
         <div class="greeting__box-left-sub-overview">
-            {%lorem 1 p%}
+            
+            {{introduction.sub_overview|safe}}
+
         </div>
         {%endif%}
 
         <div class="greeting__interactions" data-module="SmoothScroll">
             
-            {%if about in path%}
+            {%if about1 in path or about2 in path%}
             <div class="greeting__interaction-left simplify">
             {%else%}
             <div class="greeting__interaction-left" data-seo-container>
             {%endif%}
             
-                {%if path == home%}
-                <a href="{% url 'aboutpage'%}" data-seo-target>Say Hi</a>
+                {%if path == home1 or path == home2%}
+                <a href="{% url 'aboutpage'%}" data-seo-target>{% trans 'Say Hi' %}</a>
 
-                <img class="icon small_icon" src="{%static 'images/emojis/emoji_hello.png'%}" alt="An emoji of a wave">
-
+                <img class="icon small_icon" src="{%static 'images/emojis/emoji_hello.png'%}" alt="{% trans 'An emoji of a hand waving' %}">
+                
                 {%else%}
 
-                <a href="#cards">Learn more</a>
+                {%if about1 in path or about2 in path%}
+                <a href="#cards">{% trans 'Learn more' %}</a>
+                {%elif lectures1 in path or lectures2 in path%}
+                <a href="#lectures">{% trans 'Learn more' %}</a>
+                {%else%}
+                <a href="#experiments">{% trans 'Learn more' %}</a>
+                {%endif%}
 
                 <svg class="icon" aria-hidden="true" focusable="false">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-bottom"></use>
                 </svg>
 
-
                 {%endif%}
             </div>
 
-            {% if path == home%}
+            {% if path == home1 or path == home2%}
             <div class="greeting__interaction-right">
                 
-                <a href="#ipad">Discover my Work</a>
+                <a href="#ipad">{% trans 'Discover my work' %}</a>
                 <svg class="icon" aria-hidden="true" focusable="false">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-bottom"></use>
                 </svg>
@@ -75,20 +82,23 @@
     <div class="greeting__box-right">
 
         <div class="greeting__box-right-circle">
-            {%if path == home%}
-            <img src="{%static 'images/emojis/emoji_palette.png'%}" alt="An emoji of a painting palette">
-            {%elif about in path%}
-            <img  src="{%static 'images/emojis/emoji_working.png'%}" alt="An emoji of a painting palette">
-            {%elif lectures in path%}
-            <img  src="{%static 'images/emojis/emoji_bulb.png'%}" alt="An emoji of a painting palette">
+            {%if path == home1 or path == home2%}
+            <img src="{%static 'images/emojis/emoji_palette.png'%}" alt="{% trans 'An emoji of a painting palette' %}">
+            {%elif about1 in path or about2 in path%}
+            <img  src="{%static 'images/emojis/emoji_working.png'%}" alt="{% trans 'An emoji of a man working on a computer' %}">
+            {%elif lectures1 in path or lectures2 in path%}
+            <img  src="{%static 'images/emojis/emoji_bulb.png'%}" alt="{% trans 'An emoji of a light bulb' %}">
             {%else%}
-            <img src="{%static 'images/emojis/emoji_painter.png'%}" alt="An emoji of a painting palette">
+            <img src="{%static 'images/emojis/emoji_painter.png'%}" alt="A{% trans 'An emoji of a painter' %}">
             {%endif%}
         </div>
     </div>
 
 </div>
 
+{%endwith%}
+{%endwith%}
+{%endwith%}
 {%endwith%}
 {%endwith%}
 {%endwith%}

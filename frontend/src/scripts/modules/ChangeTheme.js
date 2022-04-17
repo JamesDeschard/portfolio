@@ -41,7 +41,6 @@ export default ChangeTheme => {
             this.black_theme = 'none';
 
             this.bindEvent();
-            this.checkUserTheme();
             this.adaptTheme();
         }
 
@@ -51,13 +50,15 @@ export default ChangeTheme => {
             if (current_theme == 'black') {
                 this.makeThemeChanges();
             }
-
-        }
-
-        checkUserTheme() {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                this.makeThemeChanges();
+            else if (window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches && current_theme == 'white'){
+                    //
+                }
+            else if (window.matchMedia && 
+                window.matchMedia('(prefers-color-scheme: dark)').matches){
+                    this.makeThemeChanges();
             }
+
         }
 
         bindEvent() {

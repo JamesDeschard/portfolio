@@ -2,10 +2,6 @@ from django.contrib import admin
 
 from .models import Post
 
+from parler.admin import TranslatableAdmin
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'slug', 'date', 'length', 'text', 'tags')
-    list_filter = ('date',)
-    search_fields = ('slug',)
-    prepopulated_field = {"slug": ("title",)}
+admin.site.register(Post, TranslatableAdmin)

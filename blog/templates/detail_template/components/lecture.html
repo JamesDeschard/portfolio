@@ -2,7 +2,7 @@
 
 <div class="lecture">
     <div class="lecture__tags-box">
-        {% for tag in current.tags%}
+        {% for tag in current.role%}
         <div class="lecture__tags-box__tag">
             <span>{{tag}}</span>
         </div>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="lecture__title">
-        <h1>{{current.title}}</h1>
+        <h1>{{current.title | safe}}</h1>
     </div>
 
     <div class="lecture__date">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="lecture__text">
-        {{current.text|safe}}
+        {{current.overview|safe}}
     </div>
 
 </div>

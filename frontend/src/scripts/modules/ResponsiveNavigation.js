@@ -17,4 +17,25 @@ export default ResponsiveNavigation => {
             }
         }
     });
+
+    const languages = document.querySelector('.languages');
+    const hamburger_languages = document.querySelector('.navigation__hamburger-content__languages');
+    const fragment = document.createDocumentFragment();
+
+    function moveLanguagesToHamburger(mediaquery) {
+        if (mediaquery.matches) { 
+          fragment.appendChild(languages.firstElementChild);
+          hamburger_languages.appendChild(fragment);
+
+        } else {
+            fragment.appendChild(hamburger_languages.firstElementChild);
+            languages.appendChild(fragment);
+        }
+      }
+      
+    var mediaquery = window.matchMedia("(max-width: 768px)");
+    moveLanguagesToHamburger(mediaquery); 
+    mediaquery.addListener(moveLanguagesToHamburger); 
+
+
 };

@@ -1,23 +1,26 @@
 {% load static %}
+{% load i18n %}
 
 <div class="ipad" id="ipad" data-seo-container>
     <div class="ipad__text-container">
         <div class="ipad__tags-container">
+            {%for tag in ipad.role%}
             <div class="ipad__tags-container-tag">
-                {%lorem 1 w%}
+                {{tag}}
             </div>
+            {%endfor%}
         </div>
 
         <div class="ipad__title">
-            <h2>Project Title</h2>
+            <h2>{{ipad.title | safe }}</h2>
         </div>
 
         <div class="ipad__overview">
-            <p>{%lorem 30 w%}</p>
+            <p>{{ipad.overview | safe | truncatechars:250}}</p>
         </div>
 
         <div class="ipad__discover">
-            <a href="#" data-seo-target>Tell me more</a>
+                <a href="{%url 'project' ipad.slug%}" data-seo-target>{% trans 'Tell me more' %}</a>
             <svg class="icon" aria-hidden="true" focusable="false">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
             </svg>
@@ -27,12 +30,13 @@
     <div class="ipad__ipad">
         <picture class="white">
             <source media="(max-width: 480px)" srcset="{%static 'images/devices/white/white_iphone.png'%}">
-            <img src="{%static 'images/devices/white/white_ipad.png'%}" alt="An image of an ipad">
+            <img src="{%static 'images/devices/white/white_ipad.png'%}" alt="{% trans 'An image of an ipad' %}">
         </picture>
         <picture class="black">
             <source media="(max-width: 480px)" srcset="{%static 'images/devices/black/black_iphone.png'%}">
-            <img src="{%static 'images/devices/black/black_ipad.png'%}" alt="An image of an ipad">
+            <img src="{%static 'images/devices/black/black_ipad.png'%}" alt="{% trans 'An image of an ipad' %}">
         </picture>
     </div>
 
 </div>
+

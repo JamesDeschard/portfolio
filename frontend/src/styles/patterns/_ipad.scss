@@ -1,16 +1,18 @@
 .ipad {
     @include mq(sm) {
-        margin-top: rem(104px);
+        margin-top: rem(75px);
     }
 
     &__text-container {
         @include justifyCenterCol;
         margin: auto;
         max-width: rem(654px);
+        text-align: center;
     }
 
     &__tags-container {
         @include justifyCenterRow;
+        gap: rem(10px);
 
         &-tag {
             @include justifyCenterCol;
@@ -24,7 +26,6 @@
 
     &__overview {
         @include overview;
-        text-align: center;
 
     }
 

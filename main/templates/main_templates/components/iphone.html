@@ -1,16 +1,17 @@
 {% load static %}
+{% load i18n %}
 
-{% for i in "12"|make_list %}
-{%if i == "2"%}
+{% for iphone in iphones %}
+{%if forloop.counter == 2%}
 <div class="iphone reversed" data-seo-container>
 {%else%}
 <div class="iphone" data-seo-container>
 {%endif%}
 
-{%if i == "2"%}
+{%if forloop.counter == 2 %}
     <div class="iphone__image-box first">
-        <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="An image of an iphone">
-        <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="An image of an iphone">
+        <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+        <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
     </div>
     {%endif%}
 
@@ -20,21 +21,23 @@
         <div class="iphone__text-box">
 
             <div class="iphone__title">
-                <h2>Project Title</h2>
+                <h2>{{iphone.title | safe}}</h2>
             </div>
 
             <div class="iphone__tags-container">
+                {%for tag in iphone.roles%}
                 <div class="iphone__tags-container-tag">
-                    <span>{%lorem 1 w%}</span>
+                    {{tag}}
                 </div>
+                {%endfor%}
             </div>
 
             <div class="iphone__overview">
-                <p>{%lorem 20 w%}</p>
+                {{iphone.overview | safe | truncatechars:250}}
             </div>
 
             <div class="iphone__discover">
-                <a href="#" data-seo-target>Tell me more</a>
+                <a href="{%url 'project' iphone.slug%}" data-seo-target>{% trans 'Tell me more' %}</a>
                 <svg class="icon" aria-hidden="true" focusable="false">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-right"></use>
                 </svg>
@@ -44,12 +47,19 @@
 
     </div>
 
-    {%if i == "1"%}
+    {%if forloop.counter == 1%}
         <div class="iphone__image-box second">
-            <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="An image of an iphone">
-            <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="An image of an iphone">
+            <div class="original">
+                <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+                <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+
+            </div>
+            <div class="new">
+                <!-- <img class="test" src="{%static 'images/test.png'%}" alt=""> -->
+            </div>
         </div>
     {%endif%}
 
 </div>
+
 {%endfor%}

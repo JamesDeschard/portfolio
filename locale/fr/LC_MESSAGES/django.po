@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-17 17:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: blog/urls.py:8
+msgid "lectures/"
+msgstr "cours/"
+
+#: blog/urls.py:9
+msgid "lectures/<slug:slug>/"
+msgstr "cours/<slug:slug>/"
+
+#: django_webpack_app/settings.py:128
+msgid "English"
+msgstr "Francais"
+
+#: django_webpack_app/settings.py:129
+msgid "French"
+msgstr "Anglais"
+
+#: experiments/urls.py:7
+msgid "experiments/"
+msgstr "prototypes/"
+
+#: experiments/urls.py:8
+msgid "experiments/<slug:slug>/"
+msgstr "prototypes/<slug:slug>/"
+
+#: main/forms.py:8
+msgid "Email adress..."
+msgstr "Adresse mail..."
+
+#: main/templates/base_templates/components/navigation_links.html:4
+#: main/templates/base_templates/header.html:58
+msgid "Projects"
+msgstr "Projets"
+
+#: main/templates/base_templates/components/navigation_links.html:5
+#: main/templates/base_templates/header.html:59
+msgid "About"
+msgstr "À propos"
+
+#: main/templates/base_templates/components/navigation_links.html:6
+#: main/templates/base_templates/header.html:60
+msgid "Lectures"
+msgstr "Cours"
+
+#: main/templates/base_templates/components/navigation_links.html:7
+#: main/templates/base_templates/header.html:61
+msgid "Experiments"
+msgstr "Prototypes"
+
+#: main/templates/base_templates/footer.html:13
+msgid "Back up"
+msgstr "Remontez"
+
+#: main/templates/base_templates/header.html:25
+#: main/templates/base_templates/header.html:26
+msgid "Avatar of James Deschard"
+msgstr "Avatar de James Deschard"
+
+#: main/templates/detail_templates/components/framing.html:7
+msgid "Problem Framing"
+msgstr "Problématisation"
+
+#: main/templates/detail_templates/components/goal.html:7
+msgid "Goal"
+msgstr "Objectif"
+
+#: main/templates/detail_templates/components/goal.html:21
+msgid "An emoji of a target"
+msgstr "Un emoji représentant une cible"
+
+#: main/templates/detail_templates/components/ideation.html:7
+msgid "More snippets"
+msgstr "Plus d'images"
+
+#: main/templates/detail_templates/components/ideation.html:10
+msgid ""
+"Here are some extra samples of the project for you to get a closer look at. "
+"Enjoy!"
+msgstr ""
+"Voici quelques images supllémentaire du projet pour que vous vous fassiez "
+"une meilleure idée du contenu."
+
+#: main/templates/detail_templates/components/ideation.html:19
+#: main/templates/detail_templates/components/ideation.html:20
+msgid "A picture of an iphone"
+msgstr "Une image d'un iphone"
+
+#: main/templates/detail_templates/components/insights.html:7
+msgid "Insights"
+msgstr "Ce que j'ai appris avec ce projet"
+
+#: main/templates/detail_templates/components/insights.html:10
+msgid "Here are some of the things I learned thanks to this project."
+msgstr ""
+"Voici une petite liste compilant l'ensemble des choses que j'ai appris en "
+"réalisant ce projet."
+
+#: main/templates/detail_templates/components/overview.html:4
+msgid "Overview"
+msgstr "Vue d'ensemble"
+
+#: main/templates/detail_templates/components/overview.html:18
+msgid "Role"
+msgstr "Role"
+
+#: main/templates/detail_templates/components/overview.html:34
+msgid "Duration"
+msgstr "Durée"
+
+#: main/templates/detail_templates/components/overview.html:44
+msgid "Outcomes"
+msgstr "Résultat"
+
+#: main/templates/detail_templates/components/project.html:16
+#: main/templates/detail_templates/components/project.html:17
+#: main/templates/main_templates/components/iphone.html:13
+#: main/templates/main_templates/components/iphone.html:14
+#: main/templates/main_templates/components/iphone.html:52
+#: main/templates/main_templates/components/iphone.html:53
+msgid "An image of an iphone"
+msgstr "une image d'un iphone"
+
+#: main/templates/main_templates/components/cards.html:6
+msgid "4 fun facts about me"
+msgstr "4 anecdotes sur moi"
+
+#: main/templates/main_templates/components/cards.html:9
+msgid "One of them is a lie"
+msgstr "L'une d'entre elle est un mensonge"
+
+#: main/templates/main_templates/components/cards.html:22
+#: main/templates/main_templates/components/cards.html:49
+msgid "An emoji representing a lying face"
+msgstr "Un emoji représentant un visage de menteur"
+
+#: main/templates/main_templates/components/cards.html:45
+#: main/templates/main_templates/components/cards.html:62
+#, fuzzy
+#| msgid "An emoji representing a pen"
+msgid "An emoji representing a smiling face"
+msgstr "Un emoji représentant un crayon"
+
+#: main/templates/main_templates/components/cards.html:71
+msgid "Just show all!"
+msgstr "Tout montrer!"
+
+#: main/templates/main_templates/components/email.html:17
+msgid "Send me an email!"
+msgstr "Envoyez moi un email!"
+
+#: main/templates/main_templates/components/email.html:20
+msgid "Please fill in this captcha:"
+msgstr "Remplissez ce captcha s'il vous plait:"
+
+#: main/templates/main_templates/components/email.html:23
+msgid "Confirm!"
+msgstr "Confirmer!"
+
+#: main/templates/main_templates/components/email.html:28
+msgid "An email has been sent! See you soon!"
+msgstr "Un email a été envoyé! A bientôt!"
+
+#: main/templates/main_templates/components/email.html:41
+msgid "A graphic representation of a dropbox"
+msgstr "Une image représentant une dropbox"
+
+#: main/templates/main_templates/components/greeting.html:47
+msgid "Say Hi"
+msgstr "Dite Bonjour"
+
+#: main/templates/main_templates/components/greeting.html:49
+msgid "An emoji of a hand waving"
+msgstr "Un emoji représentant une main faisant coucou"
+
+#: main/templates/main_templates/components/greeting.html:54
+#: main/templates/main_templates/components/greeting.html:56
+#: main/templates/main_templates/components/greeting.html:58
+msgid "Learn more"
+msgstr "En apprendre plus"
+
+#: main/templates/main_templates/components/greeting.html:71
+msgid "Discover my work"
+msgstr "Découvrir mon travail"
+
+#: main/templates/main_templates/components/greeting.html:86
+msgid "An emoji of a painting palette"
+msgstr "Un emoji représentant une palette de peintre"
+
+#: main/templates/main_templates/components/greeting.html:88
+msgid "An emoji of a man working on a computer"
+msgstr "un emoji représentant un homme travaillant sur un ordinateur"
+
+#: main/templates/main_templates/components/greeting.html:90
+msgid "An emoji of a light bulb"
+msgstr "Un emoji représentant une ampoule"
+
+#: main/templates/main_templates/components/greeting.html:92
+msgid "An emoji of a painter"
+msgstr "Un emoji représentant un peintre"
+
+#: main/templates/main_templates/components/ipad.html:23
+#: main/templates/main_templates/components/iphone.html:40
+msgid "Tell me more"
+msgstr "En apprendre plus"
+
+#: main/templates/main_templates/components/ipad.html:33
+#: main/templates/main_templates/components/ipad.html:37
+msgid "An image of an ipad"
+msgstr "une image d'un ipad"
+
+#: main/templates/main_templates/components/more.html:21
+msgid "More Projects."
+msgstr "Plus de Projets."
+
+#: main/templates/main_templates/components/more.html:33
+msgid "An emoji representing a pen"
+msgstr "Un emoji représentant un crayon"
+
+#: main/templates/main_templates/components/more.html:35
+msgid "An emoji representing a tent"
+msgstr "Un emoji représentant une tente"
+
+#: main/urls.py:9
+msgid "about/"
+msgstr "a-propos/"
+
+#: main/urls.py:10
+msgid "projects/<slug:slug>/"
+msgstr "projets/<slug:slug>/"

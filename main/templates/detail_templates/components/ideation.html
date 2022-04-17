@@ -1,12 +1,13 @@
 {% load static %}
+{% load i18n %}
 
 <div class="ideation">
 
     <div class="ideation__title">
-        <h2>More snippets</h2>
+        <h2>{% trans 'More snippets' %}</h2>
     </div>
     <div class="ideation__overview">
-        <p>{% lorem 10 w%}</p>
+        <p>{% trans 'Here are some extra samples of the project for you to get a closer look at. Enjoy!' %}</p>
     </div>
 
     <div class="ideation__image-container">
@@ -15,8 +16,8 @@
                 <ul class="glide__slides">
                     {% for i in "1234"|make_list%}
                     <li class="glide__slide"> 
-                        <img class="ideation__image white" src="{% static 'images/devices/white/white_iphone.png'%}" alt="A representation of an iphone">
-                        <img class="ideation__image black" src="{% static 'images/devices/black/black_iphone.png'%}" alt="A representation of an iphone">
+                        <img class="ideation__image white" src="{% static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'A picture of an iphone' %}">
+                        <img class="ideation__image black" src="{% static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'A picture of an iphone' %}">
                     </li>
                     {% endfor %}
                 </ul>

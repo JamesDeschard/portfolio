@@ -64,7 +64,7 @@ export default NavigationIndicator => {
             }
 
             this.showAllCards.addEventListener('click', () => {
-                if (! this.tracker ) {
+                if (!this.tracker) {
                     this.tracker = true;
                     this.moveSmileyFaces();
                     this.cardsContainerToFlippedContainer(1000);
@@ -121,8 +121,7 @@ export default NavigationIndicator => {
                     card.style.transform = `rotate(-${counter}deg)`;
                     counter += 10;
 
-                }
-                else {
+                } else {
                     card.style.transform = 'rotate(0deg)';
                 }
             });
@@ -183,10 +182,20 @@ export default NavigationIndicator => {
 
             setTimeout(() => {
 
+                let language = window.location.href.includes('/fr/') ? 'fr' : 'en';
+
                 if (this.tracker) {
-                    textChange('Let me guess! &nbsp; &#128640;');
+                    if (language == 'en') {
+                        textChange('Let me guess! &nbsp; &#128640;');
+                    } else {
+                        textChange('Laissez moi deviner! &nbsp; &#128640;');
+                    }
                 } else {
-                    textChange('Just show all! &nbsp; &#128640;');
+                    if (language == 'en') {
+                        textChange('Just show all! &nbsp; &#128640;');
+                    } else {
+                        textChange('Tout montrer! &nbsp; &#128640;');
+                    }
                 }
 
             }, 1000);
@@ -203,7 +212,7 @@ export default NavigationIndicator => {
             moved_item.classList.remove('animate');
         }
 
-        flipCardInMiddleOfAnimation(card){
+        flipCardInMiddleOfAnimation(card) {
             let front = card.firstElementChild;
             let back = front.nextElementSibling;
 

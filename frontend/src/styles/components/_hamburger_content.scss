@@ -18,6 +18,16 @@
     background-color: setColor(gray, light);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
+    &__languages {
+
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+
+        top: rem(10px);
+        left: rem(10px);
+    }
+
     &__links {
         display: flex;
         flex-direction: column;
@@ -65,7 +75,7 @@
     width: 75vw;
 }
 
-.navigation svg {
+.navigation__hamburger svg {
     height: 80px;
     position: absolute;
     width: 80px;

@@ -1,5 +1,7 @@
+{% load i18n %}
+
 <div class="overview__title">
-    <h2>Overview</h2>
+    <h2>{% trans 'Overview' %}</h2>
 </div>
 
 <div class="overview">
@@ -13,7 +15,7 @@
         <div class="overview__box">
 
             <div class="overview__small-title">
-                <h3>Role</h3>
+                <h3>{% trans 'Role' %}</h3>
             </div>
 
             {% for role in current.role%}
@@ -29,7 +31,7 @@
         <div class="overview__box">
 
             <div class="overview__small-title">
-                <h3>Duration</h3>
+                <h3>{% trans 'Duration' %}</h3>
             </div>
 
             <span>{{current.duration}}</span>
@@ -39,7 +41,7 @@
         <div class="overview__box">
 
             <div class="overview__small-title">
-                <h3>Outcomes</h3>
+                <h3>{% trans 'Outcomes' %}</h3>
             </div>
 
             <div class="overview__outcome__tag-box">

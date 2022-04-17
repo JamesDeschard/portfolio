@@ -1,6 +1,8 @@
+{% load i18n %}
+
 <ul class="navigation__links">
-    <li><a href="{%url 'homepage'%}">Projects</a></li>
-    <li><a href="{%url 'aboutpage'%}">About</a></li>
-    <li><a href="{%url 'lectures'%}">Lectures</a></li>
-    <li><a href="{%url 'experimentspage'%}">Experiments</a></li>
+    <li><a href="{%url 'homepage'%}">{% trans 'Projects'%}</a></li>
+    <li><a href="{%url 'aboutpage'%}">{% trans 'About'%}</a></li>
+    <li><a href="{%url 'lectures'%}">{% trans 'Lectures'%}</a></li>
+    <li><a href="{%url 'experimentspage'%}">{% trans 'Experiments'%}</a></li>
 </ul>   

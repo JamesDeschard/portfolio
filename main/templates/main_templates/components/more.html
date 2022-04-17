@@ -1,43 +1,63 @@
 {% load static %}
+{% load i18n %}
 
 {% with path=request.path%}
-{% with lectures='/lectures/'%}
+{% with lectures1='/lectures/'%}
+{% with lectures2='/cours/'%}
+{% with experiments1='/experiments/'%}
+{% with experiments2='/prototypes/'%}
 
 
+{%if lectures1 in path or lectures2 in path%}
+<div id="lectures" class="more">
+{%elif experiments1 in path or experiments2 in path%}
+<div id="experiments" class="more">
+{%else%}
 <div class="more">
+{%endif%}
 
-    {% if path == '/'%}
+    {% if path == '/en/' or path == '/fr/'%}
     <div class="more__title">
-        <h2>More Projects.</h2>
+        <h2>{% trans 'More Projects.'%}</h2>
     </div>
     {% endif%}
 
     <div class="more__container">
         
-        {%for i in "12"|make_list%}
+        {%for object in more%}
         <div class="more__container-box" data-seo-container>
 
 
             <div class="more__container-box__image-box">
-                {%if lectures in path%}
-                <img src="{%static 'images/emojis/emoji_pen.png'%}" alt="An emoji representing a pen">
+                {%if lectures1 in path or lecture2 in path%}
+                <img src="{%static 'images/emojis/emoji_pen.png'%}" alt="{% trans 'An emoji representing a pen' %}">
                 {%else%}
-                <img src="{%static 'images/emojis/emoji_tent.png'%}" alt="An emoji representing a tent">
+                <img src="{%static 'images/emojis/emoji_tent.png'%}" alt="{% trans 'An emoji representing a tent' %}">
                 {%endif%}
             </div>
 
             <div class="more__container-box__title">
-                <h3><a href="" data-seo-target>{%lorem 4 w%}</a></h3>
+                {%if lectures1 in path or lectures2 in path%}
+                <h3><a href="{%url 'post' object.slug%}" data-seo-target>{{object.title|safe}}</a></h3>
+                {%elif experiments1 in path or experiments2 in path%}
+                <h3><a href="{{object.url}}" target="_blank" data-seo-target>{{object.title|safe}}</a></h3>
+                {%else%}
+                <h3><a href="{%url 'project' object.slug%}" data-seo-target>{{object.title|safe}}</a></h3>
+                {%endif%}
             </div>
 
             <div class="more__container-box__overview">
-                <h3>{%lorem 20 w%}</h3>
+                {%if experiments1 in path or experiments2 in path%}
+                {{object.overview|safe}}
+                {%else%}
+                {{object.overview|safe|truncatechars:250}}
+                {%endif%}
             </div>
 
             <div class="more__container-box__tag-box">
-                {%for i in "123"|make_list%}
+                {%for tag in object.role%}
                 <div class="more__container-box__tag-box__tag">
-                    <p>lorem</p>
+                    {{tag}}
                 </div>
                 {%endfor%}
             </div>
@@ -47,6 +67,10 @@
 
     </div>
 </div>
+
+{%endwith%}
+{%endwith%}
+{%endwith%}
 {%endwith%}
 {%endwith%}
 

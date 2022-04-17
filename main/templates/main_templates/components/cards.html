@@ -1,10 +1,12 @@
 {% load static %}
+{% load i18n %}
+
 <div class="cards-intro" id="cards">
     <div class="cards-intro__title">
-        <h2>4 fun facts about me</h2>
+        <h2>{% trans '4 fun facts about me' %}</h2>
     </div>
     <div class="cards-intro__overview">
-        <h3>One of them is a lie</h3>
+        <h3>{% trans 'One of them is a lie' %}</h3>
     </div>
 </div>
 
@@ -17,110 +19,47 @@
         <div class="cards__container__left">
 
             <div class="cards__container__left__circle">
-                <img src="{%static 'images/emojis/emoji_liar.png'%}" alt="An emoji representing a liars face (long nose)">
+                <img src="{%static 'images/emojis/emoji_liar.png'%}" alt="{% trans 'An emoji representing a lying face'%}">
             </div>
 
         </div>
         <div class="cards__container__center" data-module="Cards">
 
-
-            <!-- Loop on Card DataBase Model -->
-            <div class="cards__container__center__card 1" data-question="true">
-
-                <div class="cards__container__center__card__front cards__container__center__card__part">
-
-                    <div class="cards__container__center__card__part__number">
-                        01
-                    </div>
-                    <div class="cards__container__center__card__part__text">
-                        {%lorem 12 w%}
-                    </div>
-                    
-                    <img src="" alt="">
-
-                </div>
-
-                <div class="cards__container__center__card__back  cards__container__center__card__part">
-                    <img src="{% static 'images/emojis/emoji_smile.png'%}" alt="An emoji representing a smiling face">
-    
-                </div>
-
-            </div>
-
-
-
+            {% for card in cards %}
 
             <div class="cards__container__center__card" data-question="true">
 
                 <div class="cards__container__center__card__front cards__container__center__card__part">
 
                     <div class="cards__container__center__card__part__number">
-                        02
+                        0{{forloop.counter}}
                     </div>
                     <div class="cards__container__center__card__part__text">
-                        {%lorem 12 w%}
+                        {{card.overview|safe}}
                     </div>
-                    
-                    <img src="" alt="">
 
                 </div>
 
+                {% if card.status%}
                 <div class="cards__container__center__card__back  cards__container__center__card__part">
-                    <img src="{% static 'images/emojis/emoji_smile.png'%}" alt="An emoji representing a smiling face">
-    
+                    <img src="{% static 'images/emojis/emoji_smile.png'%}" alt="{% trans 'An emoji representing a smiling face'%}">
                 </div>
+                {%else%}
+                <div class="cards__container__center__card__back  cards__container__center__card__part">
+                    <img src="{% static 'images/emojis/emoji_liar.png'%}" alt="{% trans 'An emoji representing a lying face'%}">
+                </div>
+                {%endif%}
 
             </div>
 
-             <div class="cards__container__center__card" data-question="false">
-
-                <div class="cards__container__center__card__front cards__container__center__card__part">
-
-                    <div class="cards__container__center__card__part__number">
-                        03
-                    </div>
-                    <div class="cards__container__center__card__part__text">
-                        {%lorem 12 w%}
-                    </div>
-                    
-
-                </div>
-
-                <div class="cards__container__center__card__back  cards__container__center__card__part">
-                    <img src="{% static 'images/emojis/emoji_liar.png'%}" alt="An emoji representing a lying face (pinochio nose)">
-    
-                </div>
-
-            </div>
-
-             <div class="cards__container__center__card" data-question="true">
-
-                <div class="cards__container__center__card__front cards__container__center__card__part">
-
-                    <div class="cards__container__center__card__part__number">
-                        04
-                    </div>
-                    <div class="cards__container__center__card__part__text">
-                        {%lorem 12 w%}
-                    </div>
-                    
-                    <img src="" alt="">
-
-                </div>
-
-                <div class="cards__container__center__card__back  cards__container__center__card__part">
-                    <img src="{% static 'images/emojis/emoji_smile.png'%}" alt="An emoji representing a smiling face">
-    
-                </div>
-
-            </div>
-
+            {% endfor %}
 
         </div>
+
         <div class="cards__container__right">
 
             <div class="cards__container__left__circle">
-                <img src="{%static 'images/emojis/emoji_smile.png'%}" alt="An emoji representing a smiling face">
+                <img src="{%static 'images/emojis/emoji_smile.png'%}" alt="{% trans 'An emoji representing a smiling face' %}">
             </div>
 
         </div>
@@ -129,7 +68,7 @@
 
 <div class="cards-outro">
     <div class="cards-outro__show-all">
-        <span>Just show all! &nbsp; &#128640;</span>
+        <span>{% trans 'Just show all!' %}&nbsp; &#128640;</span>
     </div>
 </div>
 

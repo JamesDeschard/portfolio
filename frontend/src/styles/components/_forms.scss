@@ -1,17 +1,12 @@
 
 .email{
     form {
-        @include mq(sm){
-            flex-direction: row;
-        }
         display: flex;
         flex-direction: column;
         padding-right: rem(49px);
-        gap: rem(15px);
 
-        input[type="text"]{
+        input[type="text"], input[type="email"]{
             border:none;
-            min-width: rem(200px);
             padding: rem($base-font-size) rem(13px);
             border-radius: rem(10px);
             background-color: rgb(232, 240, 254);
@@ -21,13 +16,65 @@
             }
         }
 
-        input[type="submit"]{
+        input[type="submit"], button{
             border:none;
             border-radius: rem(10px);
             background-color: setColor(black);
             color: setColor(white);
             font-size: rem($base-font-size);
             padding:rem(13px);
+            cursor: pointer;
         }
     }
+}
+
+.first-box {
+    display: flex;
+    gap: rem(20px);
+}
+
+.second-box {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        @include overview;
+        margin-top: 0;
+    }
+    
+    &__inputs {
+
+        display: flex;
+        flex-direction: row;
+        gap: rem(20px);
+        position: relative;
+
+        img {
+            border-radius: rem(10px);
+            width: rem(87px);
+        }
+
+        a {
+            width: rem(87px);
+            text-align: center;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            color: setColor(gray, dark_font);
+            cursor: pointer;
+            font-size: rem(12px);
+        }
+    }
+}
+
+.no-display {
+    display: none !important;
+}
+
+.move-out {
+    animation: email-out 0.5s ease-in-out forwards;
+}
+
+.move-in {
+    animation: email-in 0.5s ease-in-out forwards;
 }

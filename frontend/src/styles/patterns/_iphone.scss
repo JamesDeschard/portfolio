@@ -77,8 +77,16 @@
             width: 50%;
         }
 
+        position: relative;
+
+
         img {
             mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0));
+        }
+
+        .new {
+            position: absolute;
+            margin: 20px;
         }
     }
 }

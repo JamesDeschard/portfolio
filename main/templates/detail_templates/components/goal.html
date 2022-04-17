@@ -1,15 +1,16 @@
 {% load static%}
+{% load i18n %}
 
 <div class="goal" data-module="MagneticEffect">
     <div class="goal__left">
         <div class="goal__left__title">
-            <h2>Goal</h2>
+            <h2>{% trans 'Goal' %}</h2>
         </div>
         <div class="goal__left__overview">
-            {%lorem 15 w%}
+            {{current.goal_overview|safe}}
         </div>
         <div class="goal__left__description">
-            {%lorem 20 w%}
+            {{current.goal_sub_overview|safe}}
         </div>
     </div>
 
@@ -17,7 +18,7 @@
 
         <div class="greeting__box-right-circle">
             <div class="create">
-                <img src="{%static 'images/emojis/emoji_target.png'%}" alt="An emoji of a target">                
+                <img src="{%static 'images/emojis/emoji_target.png'%}" alt="{% trans 'An emoji of a target' %}">                
             </div>
 
         </div>
