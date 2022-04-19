@@ -28,15 +28,22 @@
     </div>
 
     <div class="ipad__ipad">
-        <picture class="white">
-            <source media="(max-width: 480px)" srcset="{%static 'images/devices/white/white_iphone.png'%}">
-            <img src="{%static 'images/devices/white/white_ipad.png'%}" alt="{% trans 'An image of an ipad' %}">
-        </picture>
-        <picture class="black">
-            <source media="(max-width: 480px)" srcset="{%static 'images/devices/black/black_iphone.png'%}">
-            <img src="{%static 'images/devices/black/black_ipad.png'%}" alt="{% trans 'An image of an ipad' %}">
-        </picture>
+        <div class="original">
+            <picture class="white">
+                <source media="(max-width: 480px)" srcset="{%static 'images/devices/white/white_iphone.png'%}">
+                <img src="{%static 'images/devices/white/white_ipad.png'%}" alt="{% trans 'An image of an ipad' %}">
+            </picture>
+            <picture class="black">
+                <source media="(max-width: 480px)" srcset="{%static 'images/devices/black/black_iphone.png'%}">
+                <img src="{%static 'images/devices/black/black_ipad.png'%}" alt="{% trans 'An image of an ipad' %}">
+            </picture>
+            <div class="new new-ipad">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="{{ipad.iphone_image.url}}">
+                    <img src="{{ipad.ipad_image.url}}" alt="{% trans 'An image of an ipad' %}">
+                </picture>
+            </div>
+        </div>
     </div>
-
 </div>
 

@@ -7,6 +7,7 @@ class Post(TranslatableModel):
     translations = TranslatedFields(
         title = models.CharField(max_length=128),
         slug = models.SlugField(max_length=128),
+        image = models.ImageField(upload_to='lectures/'),
         date = models.DateField(auto_now_add=True),
         length = models.IntegerField(),
         overview = RichTextField(),

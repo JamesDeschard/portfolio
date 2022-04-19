@@ -1,12 +1,25 @@
-import Glide, { Breakpoints, Autoplay } from '@glidejs/glide/dist/glide.modular.esm';
+import Glide, {
+  Breakpoints,
+  Autoplay
+} from '@glidejs/glide/dist/glide.modular.esm';
 
 // eslint-disable-next-line no-unused-vars
 export default Carousel => {
 
-  const first_carousel = '[data-module=Carousel]';
-  const second_carousel = '[data-carousel=Carousel_bis]';
+  var carousels = [];
+  carousels.push('[data-module=Carousel]');
 
-  for (let item of [first_carousel, second_carousel]) {
+  const check_url = (str) => {
+    if (window.location.href.includes(str)){
+      return true;
+    }
+  };
+
+  if (check_url('/projects/') || check_url('/projets/')) {
+    carousels.push('[data-carousel=Carousel_bis]');
+  }
+
+  for (let item of carousels) {
 
     new Glide(item, {
       type: 'carousel',
@@ -20,8 +33,11 @@ export default Carousel => {
           perView: 1,
         },
       },
-      gap: 8,
-    }).mount({ Breakpoints, Autoplay });
+      gap: 15,
+    }).mount({
+      Breakpoints,
+      Autoplay
+    });
 
   }
 };

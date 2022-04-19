@@ -172,6 +172,11 @@ if DEBUG:
         os.path.join(BASE_DIR, 'main', 'static_project_images')
     ]
 
+
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+
+
 # Serving Static Files when not DEBUG:
 
 else:

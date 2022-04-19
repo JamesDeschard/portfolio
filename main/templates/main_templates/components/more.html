@@ -28,12 +28,14 @@
         <div class="more__container-box" data-seo-container>
 
 
-            <div class="more__container-box__image-box">
+            <div class="more__container-box__image-box image-parent">
                 {%if lectures1 in path or lecture2 in path%}
-                <img src="{%static 'images/emojis/emoji_pen.png'%}" alt="{% trans 'An emoji representing a pen' %}">
+                <img class="emoji" src="{%static 'images/emojis/emoji_pen.png'%}" alt="{% trans 'An emoji representing a pen' %}">
                 {%else%}
-                <img src="{%static 'images/emojis/emoji_tent.png'%}" alt="{% trans 'An emoji representing a tent' %}">
+                <img class="emoji"src="{%static 'images/emojis/emoji_tent.png'%}" alt="{% trans 'An emoji representing a tent' %}">
                 {%endif%}
+
+                <img class="image" src="{{object.image.url}}" alt="{%trans 'An image of the site the post links to'%}">
             </div>
 
             <div class="more__container-box__title">

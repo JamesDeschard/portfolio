@@ -46,7 +46,7 @@
         height: rem(312px);
         border-radius: rem(32px);
         background-color: setColor(gray, light);
-
+        z-index: -2;
     }
 
     &__text {

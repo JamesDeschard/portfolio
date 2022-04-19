@@ -9,6 +9,7 @@ from ckeditor.fields import RichTextField
 class Experiment(TranslatableModel):
     translations = TranslatedFields(
         title = models.CharField(max_length=128),
+        image = models.ImageField(upload_to='experiments'),
         url = models.CharField(max_length=128),
         overview = RichTextField(),
         role = models.JSONField(default=list)

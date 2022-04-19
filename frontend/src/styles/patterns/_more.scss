@@ -33,12 +33,7 @@
         height: rem(352px);
         background-color: setColor(gray, light);
         border-radius: rem(32px);
-
-        img {
-            height: rem($circle-inside-emoji-dimension);
-            width: rem($circle-inside-emoji-dimension);
-        }
-
+        z-index: -2;
     }
 
     &__title {

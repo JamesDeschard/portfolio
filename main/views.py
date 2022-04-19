@@ -46,3 +46,12 @@ class ProjectDetails(BasePostDetailPage):
     template_name = "detail_templates/project_page.html"
     model_name = Project
 
+    def get(self, request, *args, **kwargs):
+        current_project = self.get_current_model_instance(kwargs['slug'])
+        context = {
+            'detail_page': True,
+            'more': self.get_more(),
+            'current': current_project,
+            'more_images': self.get_project_images(current_project)
+        }
+        return render(request, self.template_name, context)

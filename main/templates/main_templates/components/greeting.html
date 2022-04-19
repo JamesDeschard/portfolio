@@ -38,7 +38,7 @@
         <div class="greeting__interactions" data-module="SmoothScroll">
             
             {%if about1 in path or about2 in path%}
-            <div class="greeting__interaction-left simplify">
+            <div class="greeting__interaction-left simplify" data-seo-container>
             {%else%}
             <div class="greeting__interaction-left" data-seo-container>
             {%endif%}
@@ -51,11 +51,11 @@
                 {%else%}
 
                 {%if about1 in path or about2 in path%}
-                <a href="#cards">{% trans 'Learn more' %}</a>
+                <a href="#cards" data-seo-target>{% trans 'Learn more' %}</a>
                 {%elif lectures1 in path or lectures2 in path%}
-                <a href="#lectures">{% trans 'Learn more' %}</a>
+                <a href="#lectures" data-seo-target>{% trans 'Learn more' %}</a>
                 {%else%}
-                <a href="#experiments">{% trans 'Learn more' %}</a>
+                <a href="#experiments" data-seo-target>{% trans 'Learn more' %}</a>
                 {%endif%}
 
                 <svg class="icon" aria-hidden="true" focusable="false">
@@ -66,9 +66,9 @@
             </div>
 
             {% if path == home1 or path == home2%}
-            <div class="greeting__interaction-right">
+            <div class="greeting__interaction-right" data-seo-container>
                 
-                <a href="#ipad">{% trans 'Discover my work' %}</a>
+                <a href="#ipad" data-seo-target>{% trans 'Discover my work' %}</a>
                 <svg class="icon" aria-hidden="true" focusable="false">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'icons/sprite.svg'%}#icon-arrow-bottom"></use>
                 </svg>

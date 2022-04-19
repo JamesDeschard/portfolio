@@ -1,4 +1,5 @@
 {% load static%}
+{% load i18n %}
 
 <div class="lecture">
     <div class="lecture__tags-box">
@@ -18,8 +19,9 @@
         </div>
     </div>
 
-    <div class="lecture__illustration">
-        <img src="{%static 'images/emojis/emoji_pen.png'%}" alt="An emoji representing a pen">
+    <div class="lecture__illustration image-parent">
+        <img class='emoji' src="{%static 'images/emojis/emoji_pen.png'%}" alt="{% trans 'An emoji representing a pen' %}">
+        <img class='image' src="{{current.image.url}}" alt="{% trans 'An illustration of the article' %}">
     </div>
 
     <div class="lecture__text">

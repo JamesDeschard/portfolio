@@ -10,8 +10,13 @@
 
 {%if forloop.counter == 2 %}
     <div class="iphone__image-box first">
-        <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
-        <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+        <div class="original">
+            <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+            <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+            <div class="new">
+                <img class="test" src="{{iphone.iphone_image.url}}" alt="{% trans 'A picture of the post topic website' %}">
+            </div>
+        </div>
     </div>
     {%endif%}
 
@@ -33,7 +38,7 @@
             </div>
 
             <div class="iphone__overview">
-                {{iphone.overview | safe | truncatechars:250}}
+                {{iphone.overview | safe | truncatechars:150}}
             </div>
 
             <div class="iphone__discover">
@@ -52,10 +57,9 @@
             <div class="original">
                 <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
                 <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
-
-            </div>
-            <div class="new">
-                <!-- <img class="test" src="{%static 'images/test.png'%}" alt=""> -->
+                <div class="new">
+                    <img class="test" src="{{iphone.iphone_image.url}}" alt="{% trans 'A picture of the post topic website' %}">
+                </div>
             </div>
         </div>
     {%endif%}

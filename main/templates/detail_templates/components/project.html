@@ -13,8 +13,13 @@
         </div>
     
         <div class="project__container__right">
-            <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone' %}">
-            <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone' %}">
+            <div class="original">
+                <img class="white" src="{%static 'images/devices/white/white_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+                <img class="black" src="{%static 'images/devices/black/black_iphone.png'%}" alt="{% trans 'An image of an iphone'%}">
+                <div class="new">
+                    <img class="test" src="{{current.iphone_image.url}}" alt="{% trans 'A picture of the post topic website' %}">
+                </div>
+            </div>
         </div>
     </div>
 </div>
