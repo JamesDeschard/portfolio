@@ -68,7 +68,7 @@ export default ScrollAnimation => {
             scrollTrigger: {
                 trigger: getClass(image),
                 start: 'top 75%',
-                toggleActions: 'play reset play reset'
+                toggleActions: 'play none none none'
             },
         }).fromTo(getClass(image), {
             x: getDistanceToExit(image),
@@ -113,7 +113,7 @@ export default ScrollAnimation => {
         scrollTrigger: {
             trigger: ".project__container__right",
             start: 'top 75%',
-            toggleActions: 'play reset play reset'
+            toggleActions: 'play none none none'
         },
     }).fromTo(".project__container__right", {
         x: 200,

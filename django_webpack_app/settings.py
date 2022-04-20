@@ -12,6 +12,7 @@ env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -82,24 +83,24 @@ WSGI_APPLICATION = 'django_webpack_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db',
-        }
+# if DEBUG:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env('DB_NAME'),
-            'USER': env('DB_USER'),
-            'PASSWORD': env('DB_PASSWORD'),
-            'HOST': env('DB_PASSWORD'),
-            'PORT': env('DB_PORT')
-        }
-    }
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': env('DB_NAME'),
+#             'USER': env('DB_USER'),
+#             'PASSWORD': env('DB_PASSWORD'),
+#             'HOST': env('DB_PASSWORD'),
+#             'PORT': env('DB_PORT')
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -165,22 +166,9 @@ DEFAULT_FROM_EMAIL = 'default from email'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-if DEBUG:
-    STATIC_URL = 'static/'
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'frontend', 'build'),
-        os.path.join(BASE_DIR, 'main', 'static_project_images')
-    ]
+USE_S3 = env('USE_S3')
 
-
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
-
-
-# Serving Static Files when not DEBUG:
-
-else:
-
+if USE_S3 == 'TRUE' and not DEBUG:
     AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
@@ -194,10 +182,20 @@ else:
 
     MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'django_webpack_app.storage_backends.PrivateMediaStorage'
+    DEFAULT_FILE_STORAGE = 'django_webpack_app.storage_backends.MediaStorage'
 
+else:
+    STATIC_URL = 'static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontend', 'build'),
+    os.path.join(BASE_DIR, 'main', 'static_project_images')
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
