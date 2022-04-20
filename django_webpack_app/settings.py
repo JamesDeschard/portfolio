@@ -83,24 +83,25 @@ WSGI_APPLICATION = 'django_webpack_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# if DEBUG:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db',
+        }
     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': env('DB_NAME'),
-#             'USER': env('DB_USER'),
-#             'PASSWORD': env('DB_PASSWORD'),
-#             'HOST': env('DB_PASSWORD'),
-#             'PORT': env('DB_PORT')
-#         }
-#     }
+
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env('RDS_DB_NAME'),
+            'USER': env('RDS_DB_USER'),
+            'PASSWORD': env('RDS_DB_PASSWORD'),
+            'HOST': env('RDS_DB_PASSWORD'),
+            'PORT': env('RDS_DB_PORT')
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
