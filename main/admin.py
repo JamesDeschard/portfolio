@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Project, SendEmail, Cards, IntroductionParagraph, ProjectImage
+from .models import Project, SendEmail, Cards, ProjectImage, IntroductionExperimentsParagraph, \
+IntroductionAboutParagraph, IntroductionLecturesParagraph, IntroductionProjectsParagraph
 
 from parler.admin import TranslatableAdmin
 
@@ -14,7 +15,9 @@ class ProjectAdmin(TranslatableAdmin):
     class Meta:
         model = Project
 
-
+admin.site.register(IntroductionProjectsParagraph, TranslatableAdmin)
+admin.site.register(IntroductionAboutParagraph, TranslatableAdmin)
+admin.site.register(IntroductionLecturesParagraph, TranslatableAdmin)
+admin.site.register(IntroductionExperimentsParagraph, TranslatableAdmin)
 admin.site.register(Cards, TranslatableAdmin)
-admin.site.register(IntroductionParagraph, TranslatableAdmin)
 admin.site.register(SendEmail, TranslatableAdmin)

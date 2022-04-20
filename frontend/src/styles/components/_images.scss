@@ -3,6 +3,12 @@
     position: relative;
     overflow: hidden;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0)100%);
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
     
 }
 
@@ -16,7 +22,10 @@
 }
 
 .new-ipad {
-    padding: 30px;
+    @include mq(sm){
+        padding: 2.5%;
+    }
+    padding: 5%;
 }
 
 .image-parent {

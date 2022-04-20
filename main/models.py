@@ -76,6 +76,25 @@ class IntroductionParagraph(TranslatableModel):
     def __str__(self) -> str:
         return self.title
 
+    class meta:
+        abstract = True
+
+
+class IntroductionProjectsParagraph(IntroductionParagraph):
+    pass
+
+
+class IntroductionAboutParagraph(IntroductionParagraph):
+    pass
+
+
+class IntroductionLecturesParagraph(IntroductionParagraph):
+    pass
+
+
+class IntroductionExperimentsParagraph(IntroductionParagraph):
+    pass
+
 
 class Cards(TranslatableModel):
     translations = TranslatedFields(

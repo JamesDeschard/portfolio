@@ -6,13 +6,13 @@ from django.http import JsonResponse
 from django.utils.translation import get_language
 
 from main.forms import EmailForm
-from main.models import Project, SendEmail, IntroductionParagraph, Cards, ProjectImage
+from main.models import Project, SendEmail, Cards, ProjectImage
 
 
 class BaseAllPostPage(View):
     template_name = ""
     post_model_name = ""
-    intro_model_title = ""
+    intro_model = ""
 
     def get_cards(self):
         return Cards.objects.all()
@@ -23,7 +23,7 @@ class BaseAllPostPage(View):
         return random_items
 
     def get_intro_data(self):
-        return IntroductionParagraph.objects.active_translations(title=self.intro_model_title)[0]
+        return self.intro_model.objects.first()
 
     def get_all_post_model_instances(self):
         return self.post_model_name.objects.all()

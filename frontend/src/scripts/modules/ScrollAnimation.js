@@ -42,7 +42,7 @@ export default ScrollAnimation => {
         scrollTrigger: {
             trigger: '.ipad__ipad',
             start: 'top 100%',
-            toggleActions: 'play reset play reset'
+            toggleActions: 'play none none none'
         },
     }).fromTo('.ipad__ipad', {
         opacity: 0,

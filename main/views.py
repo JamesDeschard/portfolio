@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Project
+from .models import Project, IntroductionProjectsParagraph, IntroductionAboutParagraph
 from main.base_classes.base_classes import BaseAllPostPage, BasePostDetailPage
 from .forms import EmailForm
 
@@ -8,7 +8,7 @@ from .forms import EmailForm
 class HomePage(BaseAllPostPage):
     template_name = "main_templates/homepage.html"
     post_model_name = Project
-    intro_model_title = 'ENGLISH Projects'
+    intro_model = IntroductionProjectsParagraph
 
     def get(self, request, *args, **kwargs):
 
@@ -30,7 +30,7 @@ class HomePage(BaseAllPostPage):
 
 class AboutPage(BaseAllPostPage):
     template_name = "main_templates/aboutpage.html"
-    intro_model_title = 'ENGLISH About'
+    intro_model = IntroductionAboutParagraph
 
     def get(self, request, *args, **kwargs):
         context = {

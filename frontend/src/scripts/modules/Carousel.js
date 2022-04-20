@@ -28,12 +28,12 @@ export default Carousel => {
       animationTimingFunc: 'linear',
       startAt: 0,
       perView: 2,
+      gap: 50,
       breakpoints: {
         768: {
           perView: 1,
         },
       },
-      gap: 15,
     }).mount({
       Breakpoints,
       Autoplay
